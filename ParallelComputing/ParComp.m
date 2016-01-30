@@ -38,11 +38,6 @@ HouseholdParameters = struct('capital_Param',zeros(3,times),'wage_Param',zeros(3
 Firms_PLM       = struct('capital',zeros(1,times),'inflation',zeros(1,times),'markup',zeros(1,times),'A',zeros(1,times));
 FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(3,times),'markup_Param',zeros(3,times));
 
-% generate shock
-
-ActualLawOfMotion.A(1,1) = 0; % initial value of shock
-ActualLawOfMotion.A(1,2) = 0.1*randn;
-
 numPARloops          = 4;
 numShockRealizations = 10;
 % create container to store the data
