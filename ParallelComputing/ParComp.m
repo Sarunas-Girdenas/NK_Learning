@@ -38,8 +38,8 @@ HouseholdParameters = struct('capital_Param',zeros(3,times),'wage_Param',zeros(3
 Firms_PLM       = struct('capital',zeros(1,times),'inflation',zeros(1,times),'markup',zeros(1,times),'A',zeros(1,times));
 FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(3,times),'markup_Param',zeros(3,times));
 
-numPARloops          = 4;
-numShockRealizations = 10;
+numPARloops          = 2;
+numShockRealizations = 2;
 % create container to store the data
 
 % initialize each worker at the RE equilibrium by loading RE data
@@ -62,6 +62,7 @@ HH_D_Out_Capital   = {};
 HH_D_Out_Wage      = {};
 HH_D_Out_Inflation = {};
 HH_D_Out_Markup    = {};
+HH_D_Out_Interest  = {};
 B_Households       = {};
 tmpZ_HH            = {};
 
@@ -90,11 +91,11 @@ for j = 1:numPARloops
 		% create shock realization for each worker
 
 		storeResults{j}.Actual{h}.A(1,1) = 0;
-		storeResults{j}.Actual{h}.A(1,2) = 0.1*randn;
+		storeResults{j}.Actual{h}.A(1,2) = 0.0823; %0.1*randn;
 
-		for i = 3:times
+		for g = 3:times
 
-			storeResults{j}.Actual{h}.A(1,i) = ParameterValues.rho * storeResults{j}.Actual{h}.A(1,i-1);
+			storeResults{j}.Actual{h}.A(1,g) = ParameterValues.rho * storeResults{j}.Actual{h}.A(1,g-1);
 
 
 		end
@@ -145,26 +146,29 @@ for j = 1:numPARloops
 
 		% household
 
-		LearningAlgorithms{j}.Households{h}.capital   = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.capital_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Households{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,i) ]',storeResults{j}.Actual{h}.capital(1,1));
-		LearningAlgorithms{j}.Households{h}.Wage      = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.wage_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Households{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,i) ]',storeResults{j}.Actual{h}.wage(1,1));
-		LearningAlgorithms{j}.Households{h}.Inflation = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.inflation_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Households{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,i) ]',storeResults{j}.Actual{h}.inflation(1,1));
-		LearningAlgorithms{j}.Households{h}.Interest  = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.interestRate_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Households{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,i) ]',storeResults{j}.Actual{h}.interestRate(1,1));
-		LearningAlgorithms{j}.Households{h}.Markup    = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.markup_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Households{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,i) ]',storeResults{j}.Actual{h}.markup(1,1));
+		LearningAlgorithms{j}.Households{h}.capital   = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.capital_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Households{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,1) ]',storeResults{j}.Actual{h}.capital(1,1));
+		LearningAlgorithms{j}.Households{h}.Wage      = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.wage_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Households{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,1) ]',storeResults{j}.Actual{h}.wage(1,1));
+		LearningAlgorithms{j}.Households{h}.Inflation = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.inflation_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Households{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,1) ]',storeResults{j}.Actual{h}.inflation(1,1));
+		LearningAlgorithms{j}.Households{h}.Interest  = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.interestRate_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Households{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,1) ]',storeResults{j}.Actual{h}.interestRate(1,1));
+		LearningAlgorithms{j}.Households{h}.Markup    = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.markup_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Households{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,1) ]',storeResults{j}.Actual{h}.markup(1,1));
 
 		% firms
 
-		LearningAlgorithms{j}.Firms{h}.capital   = CG_Learning(0.1,storeResults{j}.Firms{h}.Parameters.capital_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Firms{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,i) ]',storeResults{j}.Actual{h}.capital(1,1));
-		LearningAlgorithms{j}.Firms{h}.Inflation = CG_Learning(0.1,storeResults{j}.Firms{h}.Parameters.inflation_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Firms{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,i) ]',storeResults{j}.Actual{h}.inflation(1,1));
-		LearningAlgorithms{j}.Firms{h}.Markup    = CG_Learning(0.1,storeResults{j}.Firms{h}.Parameters.markup_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Firms{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,i) ]',storeResults{j}.Actual{h}.markup(1,1));
+		LearningAlgorithms{j}.Firms{h}.capital   = CG_Learning(0.1,storeResults{j}.Firms{h}.Parameters.capital_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Firms{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,1) ]',storeResults{j}.Actual{h}.capital(1,1));
+		LearningAlgorithms{j}.Firms{h}.Inflation = CG_Learning(0.1,storeResults{j}.Firms{h}.Parameters.inflation_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Firms{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,1) ]',storeResults{j}.Actual{h}.inflation(1,1));
+		LearningAlgorithms{j}.Firms{h}.Markup    = CG_Learning(0.1,storeResults{j}.Firms{h}.Parameters.markup_Param(:,1), initial_D_Matrix, [ 1 storeResults{j}.Firms{h}.PLM.capital(1,1) storeResults{j}.Actual{h}.A(1,1) ]',storeResults{j}.Actual{h}.markup(1,1));
 
 		% create containers to store zMat and D matrices
 
 		zMatStore{j}{h} = {};
-
+        
+        % households
+        
 		HH_D_Out_Capital{j}{h}   = {};
 		HH_D_Out_Wage{j}{h}      = {};
 		HH_D_Out_Inflation{j}{h} = {};
 		HH_D_Out_Markup{j}{h}    = {};
+        HH_D_Out_Interest{j}{h}  = {};
 		B_Households{j}{h}       = {};
 		tmpZ_HH{j}{h}            = {};
 
@@ -185,8 +189,11 @@ end
 
 % clear some variables
 
-clear k j i h
+clear k j g h
 
+% open the parpool
+
+parpool(2);
 
 % the main learning loop 
 
@@ -194,7 +201,7 @@ parfor j = 1:numPARloops
 
 	for h = 1:numShockRealizations
 
-		for t = 1:times
+		for t = 2:times
 
 
 			% update the state variable for all workers
@@ -208,7 +215,7 @@ parfor j = 1:numPARloops
 
 			% define zMatrix for households and firms with updated capital
 
-			zMat{j}{h} = [1 storeResults{j}.Actual{h}.capital(1,t) storeResults{j}.Actual{h}.A(1,t)]';
+			zMatStore{j}{h} = [ 1 storeResults{j}.Actual{h}.capital(1,t) storeResults{j}.Actual{h}.A(1,t) ]';
 
 			% update D matrix and parameters for both firms and households
 
@@ -218,13 +225,13 @@ parfor j = 1:numPARloops
 			[ storeResults{j}.Households{h}.Parameters.wage_Param(:,t), HH_D_Out_Wage{j}{h} ]             = LearningAlgorithms{j}.Households{h}.Wage.do_CG_Learning();
 			[ storeResults{j}.Households{h}.Parameters.inflation_Param(:,t), HH_D_Out_Inflation{j}{h} ]   = LearningAlgorithms{j}.Households{h}.Inflation.do_CG_Learning();
 			[ storeResults{j}.Households{h}.Parameters.interestRate_Param(:,t), HH_D_Out_Interest{j}{h} ] = LearningAlgorithms{j}.Households{h}.Interest.do_CG_Learning();
-			[ storeResults{j}.Households{h}.Parameters.markup_Param(:,t), HH_D_Out_Interest{j}{h} ]       = LearningAlgorithms{j}.Households{h}.Markup.do_CG_Learning();
+			[ storeResults{j}.Households{h}.Parameters.markup_Param(:,t), HH_D_Out_Markup{j}{h} ]         = LearningAlgorithms{j}.Households{h}.Markup.do_CG_Learning();
 
 			% firms
 
 			[ storeResults{j}.Firms{h}.Parameters.capital_Param(:,t), FF_D_Out_Capital{j}{h} ]     = LearningAlgorithms{j}.Firms{h}.capital.do_CG_Learning();
 			[ storeResults{j}.Firms{h}.Parameters.inflation_Param(:,t), FF_D_Out_Inflation{j}{h} ] = LearningAlgorithms{j}.Firms{h}.Inflation.do_CG_Learning();
-			[ storeResults{j}.Firms{h}.Parameters.markup_Param(:,t), FF_D_Out_Inflation{j}{h} ]    = LearningAlgorithms{j}.Firms{h}.Markup.do_CG_Learning();
+			[ storeResults{j}.Firms{h}.Parameters.markup_Param(:,t), FF_D_Out_Markup{j}{h} ]       = LearningAlgorithms{j}.Firms{h}.Markup.do_CG_Learning();
 
 			% compute one step ahead forecast / PLM using updated parameters
 
@@ -232,7 +239,7 @@ parfor j = 1:numPARloops
 
 			B_Households{j}{h} = [ 1 0 0; storeResults{j}.Households{h}.Parameters.capital_Param(:,t)'; 0 0 ParameterValues.rho ];
 
-			tmpZ_HH{j}{h} = B_Households{j}{h}*zMat{j}{h};
+			tmpZ_HH{j}{h} = B_Households{j}{h}*zMatStore{j}{h};
 
 			storeResults{j}.Households{h}.PLM.capital(1,t)      = tmpZ_HH{j}{h}(2,1);
 			storeResults{j}.Households{h}.PLM.A(1,t)            = tmpZ_HH{j}{h}(3,1);
@@ -245,7 +252,7 @@ parfor j = 1:numPARloops
 
 			B_Firms{j}{h} = [1 0 0; storeResults{j}.Firms{h}.Parameters.capital_Param(:,t)'; 0 0 ParameterValues.rho];
 
-			tmpZ_FF{j}{h} = B_Firms{j}{h}*zMat{j}{h};
+			tmpZ_FF{j}{h} = B_Firms{j}{h}*zMatStore{j}{h};
 
 			storeResults{j}.Firms{h}.PLM.capital(1,t)   = tmpZ_FF{j}{h}(2,1);
 			storeResults{j}.Firms{h}.PLM.A(1,t)         = tmpZ_FF{j}{h}(3,1);
@@ -254,40 +261,44 @@ parfor j = 1:numPARloops
 
 			% solve for Actual Law of Motion (actually, AlM is always the same but we keep this part for consistency)
 
-			[ E_K{j}{h}, E_S{j}{h} ] = Solve_ExpecationsPAR( t, SteadyStateValuesNK, ParameterValuesLearning, ParameterValues, HouseholdParameters, FirmsParameters, ActualLawOfMotion );
+			[ E_K{j}{h}, E_S{j}{h} ] = Solve_Expecations_PAR( t, SteadyStateValuesNK, ParameterValuesLearning, ParameterValues, storeResults{j}{h},j,h );
 
 
-			storeResults{j}.Actual{h}.inflation(1,t)     = SolveInflation2_PAR( ParameterValues, SteadyStateValuesNK, ParameterValuesLearning, t, ActualLawOfMotion, E_K{j}{h}, E_S{j}{h} );
+			storeResults{j}.Actual{h}.inflation(1,t)     = SolveInflation2_PAR( ParameterValues, SteadyStateValuesNK, ParameterValuesLearning, t, storeResults{j}{h}, E_K{j}{h}, E_S{j}{h}, j, h );
 			storeResults{j}.Actual{h}.interestRate(1,t)  = SteadyStateValuesNK.R*(1-ParameterValues.r_R)*ParameterValues.r_Infl*storeResults{j}.Actual{h}.inflation(1,t)-SteadyStateValuesNK.R*(1-ParameterValues.r_R)*ParameterValues.r_Infl+SteadyStateValuesNK.R;
 			storeResults{j}.Actual{h}.markup(1,t)        = -ParameterValues.theta*SteadyStateValuesNK.X/(1-ParameterValues.theta)/(1-ParameterValues.theta*ParameterValues.beta)*storeResults{j}.Actual{h}.inflation(1,t)+ParameterValues.theta*SteadyStateValuesNK.X...
     			/(1-ParameterValues.theta)/(1-ParameterValues.theta*ParameterValues.beta)+SteadyStateValuesNK.X/(1-ParameterValues.theta*ParameterValues.beta)*E_K{j}{h}+SteadyStateValuesNK.X;
 			storeResults{j}.Actual{h}.capitalReturn(1,t) = storeResults{j}.Actual{h}.interestRate(1,t)/storeResults{j}.Actual{h}.inflation(1,t)-1+ParameterValues.delta;
 			storeResults{j}.Actual{h}.labour(1,t)        = storeResults{j}.Actual{h}.capital(1,t)*(storeResults{j}.Actual{h}.markup(1,t)*storeResults{j}.Actual{h}.capitalReturn(1,t)/ParameterValues.alpha/exp(storeResults{j}.Actual{h}.A(1,t)))^(1/(1-ParameterValues.alpha));
 			storeResults{j}.Actual{h}.wage(1,t)          = (1-ParameterValues.alpha)*exp(storeResults{j}.Actual{h}.A(1,t))*(storeResults{j}.Actual{h}.capital(1,t)/storeResults{j}.Actual{h}.labour(1,t))^ParameterValues.alpha/storeResults{j}.Actual{h}.markup(1,t);
-			storeResults{j}.Actual{h}.consumption(1,t)   = storeResults{j}.Actual{h}.wage(1,t)*storeResults{j}.Actual{h}.labour(1,t)^(1-ParameterValues.eta);
+            storeResults{j}.Actual{h}.consumption(1,t)   = storeResults{j}.Actual{h}.wage(1,t)*storeResults{j}.Actual{h}.labour(1,t)^(1-ParameterValues.eta);
 
 
 			% update learning algos for the next iteration
 
 			% household
 
-			LearningAlgorithms{j}.Households{h}.capital   = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.capital_Param(:,t), HH_D_Out_Capital{j}{h}, zMat{j}{h},storeResults{j}.Actual{h}.capital(1,t));
-			LearningAlgorithms{j}.Households{h}.Wage      = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.wage_Param(:,t), HH_D_Out_Wage{j}{h}, zMat{j}{h},storeResults{j}.Actual{h}.wage(1,t));
-			LearningAlgorithms{j}.Households{h}.Inflation = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.inflation_Param(:,t), HH_D_Out_Inflation{j}{h}, zMat{j}{h},storeResults{j}.Actual{h}.inflation(1,t));
-			LearningAlgorithms{j}.Households{h}.Interest  = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.interestRate_Param(:,t), HH_D_Out_Interest{j}{h}, zMat{j}{h},storeResults{j}.Actual{h}.interestRate(1,t));
-			LearningAlgorithms{j}.Households{h}.Markup    = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.markup_Param(:,t), HH_D_Out_Markup{j}{h}, zMat{j}{h},storeResults{j}.Actual{h}.markup(1,t));
+			LearningAlgorithms{j}.Households{h}.capital   = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.capital_Param(:,t), HH_D_Out_Capital{j}{h}, zMatStore{j}{h},storeResults{j}.Actual{h}.capital(1,t));
+			LearningAlgorithms{j}.Households{h}.Wage      = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.wage_Param(:,t), HH_D_Out_Wage{j}{h}, zMatStore{j}{h},storeResults{j}.Actual{h}.wage(1,t));
+			LearningAlgorithms{j}.Households{h}.Inflation = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.inflation_Param(:,t), HH_D_Out_Inflation{j}{h}, zMatStore{j}{h},storeResults{j}.Actual{h}.inflation(1,t));
+			LearningAlgorithms{j}.Households{h}.Interest  = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.interestRate_Param(:,t), HH_D_Out_Interest{j}{h}, zMatStore{j}{h},storeResults{j}.Actual{h}.interestRate(1,t));
+			LearningAlgorithms{j}.Households{h}.Markup    = CG_Learning(0.1,storeResults{j}.Households{h}.Parameters.markup_Param(:,t), HH_D_Out_Markup{j}{h}, zMatStore{j}{h},storeResults{j}.Actual{h}.markup(1,t));
 
 			% firms
 
-			LearningAlgorithms{j}.Firms{h}.capital   = CG_Learning(0.1,storeResults{j}.Firms{h}.Parameters.capital_Param(:,t), FF_D_Out_Capital{j}{h}, zMat{j}{h},storeResults{j}.Actual{h}.capital(1,t));
-			LearningAlgorithms{j}.Firms{h}.Inflation = CG_Learning(0.1,storeResults{j}.Firms{h}.Parameters.inflation_Param(:,t), FF_D_Out_Inflation{j}{h}, zMat{j}{h},storeResults{j}.Actual{h}.inflation(1,t));
-			LearningAlgorithms{j}.Firms{h}.Markup    = CG_Learning(0.1,storeResults{j}.Firms{h}.Parameters.markup_Param(:,t), FF_D_Out_Markup{j}{h}, zMat{j}{h},storeResults{j}.Actual{h}.markup(1,t));
+			LearningAlgorithms{j}.Firms{h}.capital   = CG_Learning(0.1,storeResults{j}.Firms{h}.Parameters.capital_Param(:,t), FF_D_Out_Capital{j}{h}, zMatStore{j}{h},storeResults{j}.Actual{h}.capital(1,t));
+			LearningAlgorithms{j}.Firms{h}.Inflation = CG_Learning(0.1,storeResults{j}.Firms{h}.Parameters.inflation_Param(:,t), FF_D_Out_Inflation{j}{h}, zMatStore{j}{h},storeResults{j}.Actual{h}.inflation(1,t));
+			LearningAlgorithms{j}.Firms{h}.Markup    = CG_Learning(0.1,storeResults{j}.Firms{h}.Parameters.markup_Param(:,t), FF_D_Out_Markup{j}{h}, zMatStore{j}{h},storeResults{j}.Actual{h}.markup(1,t));
 
 		end
 
 	end
 
 end
+
+
+% kill the parpool
+delete(gcp);
 
 
 % store variables and write some codes to store the data & take the mean
