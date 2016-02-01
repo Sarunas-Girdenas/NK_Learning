@@ -39,7 +39,7 @@ Firms_PLM       = struct('capital',zeros(1,times),'inflation',zeros(1,times),'ma
 FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(3,times),'markup_Param',zeros(3,times));
 
 numPARloops          = 2;
-numShockRealizations = 20; % for each parallel loop
+numShockRealizations = 20;
 % create container to store the data
 
 % initialize each worker at the RE equilibrium by loading RE data
@@ -198,16 +198,8 @@ parpool(2);
 % the main learning loop 
 
 parfor j = 1:numPARloops
-    
-    disp('Parallel Loops: ')
-    j
-    disp('--')
 
 	for h = 1:numShockRealizations
-        
-        disp('Realization of Shocks: ')
-        h
-        disp('--');
 
 		for t = 2:times
 
@@ -261,7 +253,7 @@ parfor j = 1:numPARloops
 			B_Firms{j}{h} = [1 0 0; storeResults{j}.Firms{h}.Parameters.capital_Param(:,t)'; 0 0 ParameterValues.rho];
 
 			tmpZ_FF{j}{h} = B_Firms{j}{h}*zMatStore{j}{h};
-            
+sto
 			storeResults{j}.Firms{h}.PLM.capital(1,t)   = tmpZ_FF{j}{h}(2,1);
 			storeResults{j}.Firms{h}.PLM.A(1,t)         = tmpZ_FF{j}{h}(3,1);
 			storeResults{j}.Firms{h}.PLM.inflation(1,t) = storeResults{j}.Firms{h}.Parameters.inflation_Param(:,t)'*tmpZ_FF{j}{h};
@@ -311,7 +303,4 @@ delete(gcp);
 
 % store variables and write some codes to store the data & take the mean
 % from MC simulations
-
-% all the variables are stored in storeResults struct
-
 

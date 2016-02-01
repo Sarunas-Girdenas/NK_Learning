@@ -12,8 +12,8 @@ function [ E_K, E_S ] = Solve_Expecations_PAR( t, SteadyStateValuesNK, Parameter
     % OUTPUT:  E_K, E_S - infinite horizon forecast values from households and retailers
     % see paper for definition of E_S and E_K
     
-    B1 = [ storeResults{j}.Firms{h}.Parameters.capital_Param(2,t) storeResults{j}.Firms{h}.Parameters.capital_Param(3,t); 0 ParameterValues.rho ];
-    B2 = [ storeResults{j}.Households{h}.Parameters.capital_Param(2,t) storeResults{j}.Households{h}.Parameters.capital_Param(3,t); 0 ParameterValues.rho ];
+    B1 = [ storeResults.Firms{h}.Parameters.capital_Param(2,t) storeResults.Firms{h}.Parameters.capital_Param(3,t); 0 ParameterValues.rho ];
+    B2 = [ storeResults.Households{h}.Parameters.capital_Param(2,t) storeResults.Households{h}.Parameters.capital_Param(3,t); 0 ParameterValues.rho ];
     
     E_K  = 0;
     tmp1 = 0;
@@ -37,8 +37,8 @@ function [ E_K, E_S ] = Solve_Expecations_PAR( t, SteadyStateValuesNK, Parameter
             
         end
         
-        tmp1 = [ storeResults{j}.Firms{h}.Parameters.inflation_Param(2,t) storeResults{j}.Firms{h}.Parameters.inflation_Param(3,t) ]*(B1_i)*[ storeResults{j}.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults{j}.Actual{h}.A(1,t)-SteadyStateValuesNK.A ]';
-        tmp2 = [ storeResults{j}.Firms{h}.Parameters.markup_Param(2,t) storeResults{j}.Firms{h}.Parameters.markup_Param(3,t) ]*(B1_i)*[ storeResults{j}.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults{j}.Actual{h}.A(1,t)-SteadyStateValuesNK.A ]';
+        tmp1 = [ storeResults.Firms{h}.Parameters.inflation_Param(2,t) storeResults.Firms{h}.Parameters.inflation_Param(3,t) ]*(B1_i)*[ storeResults.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults.Actual{h}.A(1,t)-SteadyStateValuesNK.A ]';
+        tmp2 = [ storeResults.Firms{h}.Parameters.markup_Param(2,t) storeResults.Firms{h}.Parameters.markup_Param(3,t) ]*(B1_i)*[ storeResults.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults.Actual{h}.A(1,t)-SteadyStateValuesNK.A ]';
         E_K  = (betaTheta_i)*tmp1-(1-ParameterValues.theta*ParameterValues.beta)/SteadyStateValuesNK.X*(betaTheta_i)*tmp2+E_K;
   
     end
@@ -68,11 +68,11 @@ function [ E_K, E_S ] = Solve_Expecations_PAR( t, SteadyStateValuesNK, Parameter
             
         end
 
-        tmp1 = (B2_i)*[storeResults{j}.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults{j}.Actual{h}.A(1,t)-SteadyStateValuesNK.A]';
-        tmp2 = [storeResults{j}.Households{h}.Parameters.interestRate_Param(2,t) storeResults{j}.Households{h}.Parameters.interestRate_Param(3,t)]*(B2_i)*[storeResults{j}.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults{j}.Actual{h}.A(1,t)-SteadyStateValuesNK.A]';
-        tmp3 = [storeResults{j}.Households{h}.Parameters.inflation_Param(2,t) storeResults{j}.Households{h}.Parameters.inflation_Param(3,t)]*(B2_i)*[storeResults{j}.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults{j}.Actual{h}.A(1,t)-SteadyStateValuesNK.A]';
-        tmp4 = [storeResults{j}.Households{h}.Parameters.wage_Param(2,t) storeResults{j}.Households{h}.Parameters.wage_Param(3,t)]*(B2_i)*[storeResults{j}.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults{j}.Actual{h}.A(1,t)-SteadyStateValuesNK.A]';
-        tmp5 = [storeResults{j}.Households{h}.Parameters.markup_Param(2,t) storeResults{j}.Households{h}.Parameters.markup_Param(3,t)]*(B1_i)*[storeResults{j}.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults{j}.Actual{h}.A(1,t)-SteadyStateValuesNK.A]';
+        tmp1 = (B2_i)*[storeResults.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults.Actual{h}.A(1,t)-SteadyStateValuesNK.A]';
+        tmp2 = [storeResults.Households{h}.Parameters.interestRate_Param(2,t) storeResults.Households{h}.Parameters.interestRate_Param(3,t)]*(B2_i)*[storeResults.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults.Actual{h}.A(1,t)-SteadyStateValuesNK.A]';
+        tmp3 = [storeResults.Households{h}.Parameters.inflation_Param(2,t) storeResults.Households{h}.Parameters.inflation_Param(3,t)]*(B2_i)*[storeResults.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults.Actual{h}.A(1,t)-SteadyStateValuesNK.A]';
+        tmp4 = [storeResults.Households{h}.Parameters.wage_Param(2,t) storeResults.Households{h}.Parameters.wage_Param(3,t)]*(B2_i)*[storeResults.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults.Actual{h}.A(1,t)-SteadyStateValuesNK.A]';
+        tmp5 = [storeResults.Households{h}.Parameters.markup_Param(2,t) storeResults.Households{h}.Parameters.markup_Param(3,t)]*(B1_i)*[storeResults.Actual{h}.capital(1,t)-SteadyStateValuesNK.k storeResults.Actual{h}.A(1,t)-SteadyStateValuesNK.A]';
         E_S  = ParameterValuesLearning.Ck/(1-ParameterValues.beta)*(beta_i)*tmp1(1,1)+ParameterValuesLearning.Ca/(1-ParameterValues.beta)*(beta_i)*tmp1(2,1)+(SteadyStateValuesNK.c*ParameterValuesLearning.Cc*ParameterValues.beta/(1-ParameterValues.beta)^2-SteadyStateValuesNK.M*ParameterValues.beta/SteadyStateValuesNK.R/(1-ParameterValues.beta))*(beta_i)*tmp2+(SteadyStateValuesNK.M/(1-ParameterValues.beta)-SteadyStateValuesNK.c*ParameterValuesLearning.Cc/(1-ParameterValues.beta)^2)*(beta_i)*tmp3+ParameterValuesLearning.Cw/(1-ParameterValues.beta)*(beta_i)*tmp4+ParameterValuesLearning.Cx/(1-ParameterValues.beta)*(beta_i)*tmp5+E_S;
      
     end

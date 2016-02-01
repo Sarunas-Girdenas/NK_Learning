@@ -13,18 +13,18 @@ function [ Final_Inflation ] = SolveInflation2_PAR( ParameterValues, SteadyState
         
             else
         
-            R_minus = storeResults{j}.Actual{h}.interestRate(1,t-1);
-            k_minus = storeResults{j}.Actual{h}.capital(1,t-1);
+            R_minus = storeResults.Actual{h}.interestRate(1,t-1);
+            k_minus = storeResults.Actual{h}.capital(1,t-1);
         
         end
         
-        A = storeResults{j}.Actual{h}.A(1,t);
-        k = storeResults{j}.Actual{h}.capital(1,t);
+        A = storeResults.Actual{h}.A(1,t);
+        k = storeResults.Actual{h}.capital(1,t);
         
         R = SteadyStateValuesNK.R*(1-ParameterValues.r_R)*ParameterValues.r_Infl*inflation-SteadyStateValuesNK.R*(1-ParameterValues.r_R)*ParameterValues.r_Infl+SteadyStateValuesNK.R;
         
         X = -ParameterValues.theta*SteadyStateValuesNK.X/(1-ParameterValues.theta)/(1-ParameterValues.theta*ParameterValues.beta)*inflation+ParameterValues.theta*SteadyStateValuesNK.X...
-            /(1-ParameterValues.theta)/(1-ParameterValues.theta*ParameterValues.beta)+SteadyStateValuesNK.X/(1-ParameterValues.theta*ParameterValues.beta)*E_K{j}{h}+SteadyStateValuesNK.X;
+            /(1-ParameterValues.theta)/(1-ParameterValues.theta*ParameterValues.beta)+SteadyStateValuesNK.X/(1-ParameterValues.theta*ParameterValues.beta)*E_K+SteadyStateValuesNK.X;
         
         rk = (SteadyStateValuesNK.R-SteadyStateValuesNK.R*(1-ParameterValues.r_R)*ParameterValues.r_Infl)/inflation+SteadyStateValuesNK.R*(1-ParameterValues.r_R)*ParameterValues.r_Infl-1+ParameterValues.delta;
     
@@ -35,7 +35,7 @@ function [ Final_Inflation ] = SolveInflation2_PAR( ParameterValues, SteadyState
 
         InflationOut = ParameterValuesLearning.Cw*(w-SteadyStateValuesNK.w)+ParameterValuesLearning.Cx*(X-SteadyStateValuesNK.X)+ParameterValuesLearning.Ca*A+ParameterValuesLearning.Ck*(k-SteadyStateValuesNK.k)...
             -SteadyStateValuesNK.R*SteadyStateValuesNK.k*(inflation-1)+ParameterValuesLearning.HR*(R-SteadyStateValuesNK.R)+SteadyStateValuesNK.k*(R_minus-SteadyStateValuesNK.R)+SteadyStateValuesNK.R*(k_minus...
-            -SteadyStateValuesNK.k)+E_S{j}{h}-ParameterValuesLearning.Hc*(c-SteadyStateValuesNK.c);
+            -SteadyStateValuesNK.k)+E_S-ParameterValuesLearning.Hc*(c-SteadyStateValuesNK.c);
 
     end
 
