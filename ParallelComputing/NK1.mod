@@ -52,7 +52,7 @@ shocks;
 
 var e_A; // productivity shock
 
-stderr 0.1;
+stderr 0.01;
 
 end;
 

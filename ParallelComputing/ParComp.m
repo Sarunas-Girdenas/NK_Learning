@@ -91,7 +91,7 @@ for j = 1:numPARloops
 		% create shock realization for each worker
 
 		storeResults{j}.Actual{h}.A(1,1) = 0;
-		storeResults{j}.Actual{h}.A(1,2) = 0.1*randn;
+		storeResults{j}.Actual{h}.A(1,2) = 0.01*randn;
 
 		for g = 3:times
 
@@ -308,10 +308,57 @@ end
 % kill the parpool
 delete(gcp);
 
+% clear redundant variables
+clearvars -except storeResults
 
 % store variables and write some codes to store the data & take the mean
 % from MC simulations
 
 % all the variables are stored in storeResults struct
+% compute the mean of each variable
+
+% container to store means of variables
+
+capitalTemp = {};
+
+for j = 1:length(storeResults)
+    
+    for k = 1:length(storeResults{1}.Actual)
+        
+        if k == 1
+            
+            capitalTemp{j} = storeResults{j}.Actual{1}.capital;
+            
+        else
+            
+            capitalTemp{j} = capitalTemp{j} + storeResults{j}.Actual{k}.capital;
+            
+        end
+        
+    end  
+    
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
