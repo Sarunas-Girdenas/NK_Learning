@@ -38,9 +38,12 @@ function [ Final_Inflation ] = SolveInflation2( ParameterValues, SteadyStateValu
             -SteadyStateValuesNK.k)+E_S-ParameterValuesLearning.Hc*(c-SteadyStateValuesNK.c);
 
     end
+   
+    [ Final_Inflation, ~, flag, ~ ] = fzero(@calculateInflation, 1);
+    
+    disp('Flag IS: ')
+    flag
 
-
-    Final_Inflation = fzero(@calculateInflation, 1);
 
 
 end

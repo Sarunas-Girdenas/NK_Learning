@@ -39,8 +39,6 @@ function [ Final_Inflation ] = SolveInflation2_PAR( ParameterValues, SteadyState
 
     end
 
-
-    Final_Inflation = fzero(@calculateInflation, 1);
-
-
+    [ Final_Inflation ] = fzero(@calculateInflation, 1);
+    
 end
