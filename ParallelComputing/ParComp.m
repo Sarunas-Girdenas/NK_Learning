@@ -39,7 +39,7 @@ Firms_PLM       = struct('capital',zeros(1,times),'inflation',zeros(1,times),'ma
 FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(3,times),'markup_Param',zeros(3,times));
 
 numPARloops          = 2;
-numShockRealizations = 20; % for each parallel loop
+numShockRealizations = 100; % for each parallel loop
 % create container to store the data
 
 % initialize each worker at the RE equilibrium by loading RE data
