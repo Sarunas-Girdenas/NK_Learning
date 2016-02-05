@@ -12,26 +12,28 @@ classdef BoundedMemoryLearning < handle
         
         % things we need to instatiate the class
         
-        windowLength;   % constant gain parameter
-        curVarOne;      % current value of the first variable
-        curVarTwo;      % current value of the second variable
-        firstInterval;  % interval of the first variable, x1
-        secondInterval; % interval of the second variable, x2
-        thirdInterval;  % dependent variable, y
-        curVarThree;    % new obs of dependent variable
+        windowLength;      % constant gain parameter
+        curVarOne;         % current value of the first variable
+        curVarTwo;         % current value of the second variable
+        firstInterval;     % interval of the first variable, x1
+        secondInterval;    % interval of the second variable, x2
+        thirdInterval;     % dependent variable, y
+        curVarThree;       % new obs of dependent variable
+        initialParameters; % initial parameters we need in case algorithm returns NaNs, zeros or Inf
         
     end
     
     methods
         
-        function obj = BoundedMemoryLearning(windowLength)
+        function obj = BoundedMemoryLearning(windowLength,initialParameters,initialValue,initialValue2)
             
             % class constructor
             
-            obj.windowLength   = windowLength;
-            obj.firstInterval  = zeros(1,1);
-            obj.secondInterval = zeros(1,1);
-            obj.thirdInterval  = zeros(1,1);
+            obj.windowLength      = windowLength;
+            obj.initialParameters = initialParameters;
+            obj.firstInterval     = initialValue2; % initial value of capital (regression)
+            obj.secondInterval    = zeros(1,1);    % value of the shock (A)
+            obj.thirdInterval     = initialValue;  % initial value of variable (y in regression)
             
         end
         
@@ -77,46 +79,33 @@ classdef BoundedMemoryLearning < handle
             % those parameters for three variables (intercept and two
             % variables)
             
-            paramsOut = zeros(1,3);
-            
-            % parameter for the first variable
-            
-            paramsOut(1,2) = sum((obj.firstInterval - mean(obj.firstInterval))*(obj.thirdInterval - mean(obj.thirdInterval))') / sum((obj.thirdInterval - mean(obj.thirdInterval)));
-            
-            % parameter for the second variable
-            
-            paramsOut(1,3) = sum((obj.secondInterval - mean(obj.secondInterval))*(obj.thirdInterval - mean(obj.thirdInterval))') / sum((obj.thirdInterval - mean(obj.thirdInterval)));
-            
-            % parameter for intercept
-            
-            paramsOut(1,1) = mean(obj.thirdInterval) - paramsOut(1,2)*mean(obj.firstInterval) - paramsOut(1,2)*mean(obj.secondInterval);
+            X = [ ones(size(obj.firstInterval')) obj.firstInterval' obj.secondInterval' ];
+
+            paramsOut = inv((X'*X))*X'*obj.thirdInterval';
             
             % add some exceptions, double check if those are consistent
-            % with the model !!!!!
-            % <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+            % with the model
             
-            if ( isinf(paramsOut(1,1)) ) || ( paramsOut(1,1) == 0 ) || ( isnan(paramsOut(1,1)) )
+            
+            
+            if ( isinf(paramsOut(1,1)) ) || ( isnan(paramsOut(1,1)) )
                 
-                paramsOut(1,1) = 0.01*randn;
+                paramsOut(1,1) = obj.initialParameters(1,1);
                 
             end
                 
-            if ( isinf(paramsOut(1,2)) ) || ( paramsOut(1,2) == 0 ) || ( isnan(paramsOut(1,2)) )
+            if ( isinf(paramsOut(2,1)) ) || ( isnan(paramsOut(2,1)) )
                 
-                paramsOut(1,2) = 0.01*randn;
+                paramsOut(2,1) = obj.initialParameters(2,1);
                 
             end
                 
-            if ( isinf(paramsOut(1,3)) ) || ( paramsOut(1,3) == 0 ) || ( isnan(paramsOut(1,3)) )
+            if ( isinf(paramsOut(3,1)) ) || ( isnan(paramsOut(3,1)) )
                 
-                paramsOut(1,3) = 0.01*randn;
+                paramsOut(3,1) = obj.initialParameters(3,1);
                 
             end
             
-            % make it consistent with the existing struct in the rest of
-            % the code
-            
-            paramsOut = paramsOut';
 
         end
         

@@ -40,13 +40,6 @@ function [ Final_Inflation ] = SolveInflation2( ParameterValues, SteadyStateValu
     end
 
 
-    %Final_Inflation = fzero(@calculateInflation, 1);
+    Final_Inflation = fzero(@calculateInflation, 1);
     
-    [ Final_Inflation, ~, flag, ~ ] = fzero(@calculateInflation, 1);
-    
-    disp('Flag IS: ')
-    flag;
-
-
-
 end

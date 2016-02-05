@@ -36,7 +36,7 @@ FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(
 % generate shock
 
 ActualLawOfMotion.A(1,1) = 0; % initial value of shock
-ActualLawOfMotion.A(1,2) = 0.1*randn;
+ActualLawOfMotion.A(1,2) = 0.01*randn;
 
 for i = 3:times
     
@@ -110,11 +110,11 @@ memoryLength_FF = 50;
 
 % instiate Bounded Memory for households
         
-HH_Capital_Learning   = BoundedMemoryLearning( memoryLength_HH );
-HH_Wage_Learning      = BoundedMemoryLearning( memoryLength_HH );
-HH_Inflation_Learning = BoundedMemoryLearning( memoryLength_HH );
-HH_Interest_Learning  = BoundedMemoryLearning( memoryLength_HH );
-HH_Markup_Learning    = BoundedMemoryLearning( memoryLength_HH );
+HH_Capital_Learning   = BoundedMemoryLearning( memoryLength_HH, HouseholdParameters.capital_Param(:,1), SteadyStateValuesNK.k, SteadyStateValuesNK.k );
+HH_Wage_Learning      = BoundedMemoryLearning( memoryLength_HH, HouseholdParameters.wage_Param(:,1), SteadyStateValuesNK.w, SteadyStateValuesNK.k );
+HH_Inflation_Learning = BoundedMemoryLearning( memoryLength_HH, HouseholdParameters.interestRate_Param(:,1), 1, SteadyStateValuesNK.k );
+HH_Interest_Learning  = BoundedMemoryLearning( memoryLength_HH, HouseholdParameters.inflation_Param(:,1), SteadyStateValuesNK.R, SteadyStateValuesNK.k );
+HH_Markup_Learning    = BoundedMemoryLearning( memoryLength_HH, HouseholdParameters.markup_Param(:,1), SteadyStateValuesNK.X, SteadyStateValuesNK.k );
 
 HH_Capital_Learning.curVarTwo = ActualLawOfMotion.A(1,1);
 HH_Capital_Learning.curVarOne = ActualLawOfMotion.capital(1,1);
@@ -144,11 +144,11 @@ HH_Markup_Learning.UpdateIntervals();
 
 % firms
         
-FF_Capital_Learning   = BoundedMemoryLearning( memoryLength_FF );
-FF_Inflation_Learning = BoundedMemoryLearning( memoryLength_FF );
-FF_Markup_Learning    = BoundedMemoryLearning( memoryLength_FF );
+FF_Capital_Learning   = BoundedMemoryLearning( memoryLength_FF, FirmsParameters.capital_Param(:,1), SteadyStateValuesNK.k, SteadyStateValuesNK.k );
+FF_Inflation_Learning = BoundedMemoryLearning( memoryLength_FF, FirmsParameters.inflation_Param(:,1), 1, SteadyStateValuesNK.k );
+FF_Markup_Learning    = BoundedMemoryLearning( memoryLength_FF, FirmsParameters.markup_Param(:,1), SteadyStateValuesNK.X, SteadyStateValuesNK.k );
 
-FF_Capital_Learning.curVarTwo   = ActualLawOfMotion.A(1,1);
+FF_Capital_Learning.curVarTwo = ActualLawOfMotion.A(1,1);
 FF_Capital_Learning.curVarOne = ActualLawOfMotion.capital(1,1);
 
 FF_Inflation_Learning.curVarOne   = ActualLawOfMotion.capital(1,1);
@@ -159,7 +159,7 @@ FF_Markup_Learning.curVarOne   = ActualLawOfMotion.capital(1,1);
 FF_Markup_Learning.curVarTwo   = ActualLawOfMotion.A(1,1);
 FF_Markup_Learning.curVarThree = ActualLawOfMotion.markup(1,1);
 
-% update firms parameters
+% update intervals for firms
 
 FF_Inflation_Learning.UpdateIntervals();
 FF_Markup_Learning.UpdateIntervals();
@@ -196,9 +196,9 @@ for t = 2:times
     
     % firms
     
-    [ FirmsParameters.capital_Param(:,t), FF_D_Out_Capital ]     = FF_Capital_Learning.do_BM_Learning();
-    [ FirmsParameters.inflation_Param(:,t), FF_D_Out_Inflation ] = FF_Inflation_Learning.do_BM_Learning();
-    [ FirmsParameters.markup_Param(:,t), FF_D_Out_Markup ]       = FF_Markup_Learning.do_BM_Learning();
+    [ FirmsParameters.capital_Param(:,t) ]   = FF_Capital_Learning.do_BM_Learning();
+    [ FirmsParameters.inflation_Param(:,t) ] = FF_Inflation_Learning.do_BM_Learning();
+    [ FirmsParameters.markup_Param(:,t) ]    = FF_Markup_Learning.do_BM_Learning();
         
     % compute one step ahead forecast / PLM using updated parameters
     
@@ -239,21 +239,52 @@ for t = 2:times
        
     % Update learning algorithms for next iteration
     
-    % households
-        
-    HH_Capital_Learning   = CG_Learning(0.1,HouseholdParameters.capital_Param(:,t), HH_D_Out_Capital, zMat,ActualLawOfMotion.capital(1,t) );
-    HH_Wage_Learning      = CG_Learning(0.1,HouseholdParameters.wage_Param(:,t), HH_D_Out_Wage, zMat,ActualLawOfMotion.wage(1,t) );
-    HH_Inflation_Learning = CG_Learning(0.1,HouseholdParameters.inflation_Param(:,t), HH_D_Out_Inflation, zMat,ActualLawOfMotion.inflation(1,t) );
-    HH_Interest_Learning  = CG_Learning(0.1,HouseholdParameters.interestRate_Param(:,t), HH_D_Out_Interest, zMat,ActualLawOfMotion.interestRate(1,t) );
-    HH_Markup_Learning    = CG_Learning(0.1,HouseholdParameters.markup_Param(:,t), HH_D_Out_Markup, zMat,ActualLawOfMotion.markup(1,t) );
+    
+    HH_Capital_Learning.curVarOne = ActualLawOfMotion.capital(1,t);
+    HH_Capital_Learning.curVarTwo = ActualLawOfMotion.A(1,t); 
+    
+    HH_Wage_Learning.curVarOne   = ActualLawOfMotion.capital(1,t);
+    HH_Wage_Learning.curVarTwo   = ActualLawOfMotion.A(1,t);
+    HH_Wage_Learning.curVarThree = ActualLawOfMotion.wage(1,t);
+
+    HH_Inflation_Learning.curVarOne   = ActualLawOfMotion.capital(1,t);
+    HH_Inflation_Learning.curVarTwo   = ActualLawOfMotion.A(1,t);
+    HH_Inflation_Learning.curVarThree = ActualLawOfMotion.inflation(1,t);
+
+    HH_Interest_Learning.curVarOne   = ActualLawOfMotion.capital(1,t);
+    HH_Interest_Learning.curVarTwo   = ActualLawOfMotion.A(1,t);
+    HH_Interest_Learning.curVarThree = ActualLawOfMotion.interestRate(1,t);
+
+    HH_Markup_Learning.curVarOne   = ActualLawOfMotion.capital(1,t);
+    HH_Markup_Learning.curVarTwo   = ActualLawOfMotion.A(1,t);
+    HH_Markup_Learning.curVarThree = ActualLawOfMotion.markup(1,t);
+
+    % update intervals for households
+
+    HH_Wage_Learning.UpdateIntervals();
+    HH_Inflation_Learning.UpdateIntervals();
+    HH_Interest_Learning.UpdateIntervals();
+    HH_Markup_Learning.UpdateIntervals();
 
     % firms
-        
-    FF_Capital_Learning   = CG_Learning(0.1,FirmsParameters.capital_Param(:,t), FF_D_Out_Capital, zMat,ActualLawOfMotion.capital(1,t) );
-    FF_Inflation_Learning = CG_Learning(0.1,FirmsParameters.inflation_Param(:,t), FF_D_Out_Inflation, zMat,ActualLawOfMotion.inflation(1,t) );
-    FF_Markup_Learning    = CG_Learning(0.1,FirmsParameters.markup_Param(:,t), FF_D_Out_Markup, zMat,ActualLawOfMotion.markup(1,t) );
     
-        
+    FF_Capital_Learning.curVarTwo = ActualLawOfMotion.A(1,t);
+    FF_Capital_Learning.curVarOne = ActualLawOfMotion.capital(1,t);
+
+    FF_Inflation_Learning.curVarOne   = ActualLawOfMotion.capital(1,t);
+    FF_Inflation_Learning.curVarTwo   = ActualLawOfMotion.A(1,t);
+    FF_Inflation_Learning.curVarThree = ActualLawOfMotion.inflation(1,t);
+
+    FF_Markup_Learning.curVarOne   = ActualLawOfMotion.capital(1,t);
+    FF_Markup_Learning.curVarTwo   = ActualLawOfMotion.A(1,t);
+    FF_Markup_Learning.curVarThree = ActualLawOfMotion.markup(1,t);
+
+    % update intervals for firms
+
+    FF_Inflation_Learning.UpdateIntervals();
+    FF_Markup_Learning.UpdateIntervals();
+    
+    
 end
 
 toc
