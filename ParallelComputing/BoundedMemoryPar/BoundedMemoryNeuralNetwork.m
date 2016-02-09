@@ -1,4 +1,4 @@
-classdef BoundedMemoryLearning < handle
+classdef BoundedMemoryNeuralNetwork < handle
     
     % Purpose: do Bounded Memory learning
     
@@ -25,7 +25,7 @@ classdef BoundedMemoryLearning < handle
     
     methods
         
-        function obj = BoundedMemoryLearning(windowLength,initialParameters,initialValue,initialValue2)
+        function obj = BoundedMemoryNeuralNetwork(windowLength,initialParameters,initialValue,initialValue2)
             
             % class constructor
             
@@ -71,41 +71,58 @@ classdef BoundedMemoryLearning < handle
         end
         
         
-        function [ paramsOut ] = do_BM_Learning(obj)
+        function [ paramsOut ] = do_BM_Perceptron(obj)
             
-            % this function does OLS on the given intervals
-            % paramsOut consists of three parameters:
-            % paramsOut = [intercept varOne varTwo]
-            % those parameters for three variables (intercept and two
-            % variables)
+            % this function uses Linear Perceptron (Neural Network) to
+            % approximate OLS
             
-            X = [ ones(size(obj.firstInterval')) obj.firstInterval' obj.secondInterval' ];
-
-            paramsOut = pinv((X'*X))*X'*obj.thirdInterval';
+            X = [ ones(size(obj.firstInterval')) obj.firstInterval' 100*obj.secondInterval' ];
             
-            % add some exceptions, double check if those are consistent
-            % with the model
+            % normalize the data
+            
+            Y = obj.thirdInterval';
             
             
+            % do linear perceptron now
             
-            if ( isinf(paramsOut(1,1)) ) || ( isnan(paramsOut(1,1)) )
+            w         = zeros(1,3); % weights of perceptron
+            threshold = 1e-8; % threshold of convergence
+            
+            hOld = 1;
+            H = 0;
+            counter = 0;
+            
+            eta = 0.001;
+            
+            while abs(H - hOld) > threshold
                 
-                paramsOut(1,1) = obj.initialParameters(1,1)*(1+0.001*randn);
+                counter = counter + 1;
+                hOld    = H;
+                grad_t  = zeros(1,3); % initial parameters
+                
+                for h = 1:length(Y)
+                    
+                    x_t = X(h,:);
+                    y_t = Y(h);
+                    
+                    % compute hypothesis
+                    
+                    H = w*x_t' - y_t;
+                    grad_t = grad_t + 2*H*x_t; %*exp(-w*x_t')/((1+exp(-w*x_t'))^(2));
+                                     
+                end
+                                 
+                w = w - eta*grad_t;
+                
+                if counter >= 10e7
+                    
+                    break
+                    
+                end
                 
             end
-                
-            if ( isinf(paramsOut(2,1)) ) || ( isnan(paramsOut(2,1)) )
-                
-                paramsOut(2,1) = obj.initialParameters(2,1)*(1+0.001*randn);
-                
-            end
-                
-            if ( isinf(paramsOut(3,1)) ) || ( isnan(paramsOut(3,1)) )
-                
-                paramsOut(3,1) = obj.initialParameters(3,1)*(1+0.001*randn);
-                
-            end
             
+            paramsOut = w';
 
         end
         

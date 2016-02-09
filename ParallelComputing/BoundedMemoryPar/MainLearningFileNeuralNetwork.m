@@ -1,6 +1,6 @@
 % in this file we test CG learning
 tic
-times = 200;
+times = 50;
 
 % define parameter values
 
@@ -100,21 +100,21 @@ load REvariance
 
 % Households
 
-memoryLength_HH = 50; 
+memoryLength_HH = 10; 
 
 % firms
 
-memoryLength_FF = 50; 
+memoryLength_FF = 10; 
         
 % households
 
 % instiate Bounded Memory for households
         
-HH_Capital_Learning   = BoundedMemoryLearning( memoryLength_HH, HouseholdParameters.capital_Param(:,1), SteadyStateValuesNK.k, SteadyStateValuesNK.k );
-HH_Wage_Learning      = BoundedMemoryLearning( memoryLength_HH, HouseholdParameters.wage_Param(:,1), SteadyStateValuesNK.w, SteadyStateValuesNK.k );
-HH_Inflation_Learning = BoundedMemoryLearning( memoryLength_HH, HouseholdParameters.interestRate_Param(:,1), 1, SteadyStateValuesNK.k );
-HH_Interest_Learning  = BoundedMemoryLearning( memoryLength_HH, HouseholdParameters.inflation_Param(:,1), SteadyStateValuesNK.R, SteadyStateValuesNK.k );
-HH_Markup_Learning    = BoundedMemoryLearning( memoryLength_HH, HouseholdParameters.markup_Param(:,1), SteadyStateValuesNK.X, SteadyStateValuesNK.k );
+HH_Capital_Learning   = BoundedMemoryNeuralNetwork( memoryLength_HH, HouseholdParameters.capital_Param(:,1), SteadyStateValuesNK.k, SteadyStateValuesNK.k );
+HH_Wage_Learning      = BoundedMemoryNeuralNetwork( memoryLength_HH, HouseholdParameters.wage_Param(:,1), SteadyStateValuesNK.w, SteadyStateValuesNK.k );
+HH_Inflation_Learning = BoundedMemoryNeuralNetwork( memoryLength_HH, HouseholdParameters.interestRate_Param(:,1), 1, SteadyStateValuesNK.k );
+HH_Interest_Learning  = BoundedMemoryNeuralNetwork( memoryLength_HH, HouseholdParameters.inflation_Param(:,1), SteadyStateValuesNK.R, SteadyStateValuesNK.k );
+HH_Markup_Learning    = BoundedMemoryNeuralNetwork( memoryLength_HH, HouseholdParameters.markup_Param(:,1), SteadyStateValuesNK.X, SteadyStateValuesNK.k );
 
 HH_Capital_Learning.curVarTwo = ActualLawOfMotion.A(1,1);
 HH_Capital_Learning.curVarOne = ActualLawOfMotion.capital(1,1);
@@ -144,9 +144,9 @@ HH_Markup_Learning.UpdateIntervals();
 
 % firms
         
-FF_Capital_Learning   = BoundedMemoryLearning( memoryLength_FF, FirmsParameters.capital_Param(:,1), SteadyStateValuesNK.k, SteadyStateValuesNK.k );
-FF_Inflation_Learning = BoundedMemoryLearning( memoryLength_FF, FirmsParameters.inflation_Param(:,1), 1, SteadyStateValuesNK.k );
-FF_Markup_Learning    = BoundedMemoryLearning( memoryLength_FF, FirmsParameters.markup_Param(:,1), SteadyStateValuesNK.X, SteadyStateValuesNK.k );
+FF_Capital_Learning   = BoundedMemoryNeuralNetwork( memoryLength_FF, FirmsParameters.capital_Param(:,1), SteadyStateValuesNK.k, SteadyStateValuesNK.k );
+FF_Inflation_Learning = BoundedMemoryNeuralNetwork( memoryLength_FF, FirmsParameters.inflation_Param(:,1), 1, SteadyStateValuesNK.k );
+FF_Markup_Learning    = BoundedMemoryNeuralNetwork( memoryLength_FF, FirmsParameters.markup_Param(:,1), SteadyStateValuesNK.X, SteadyStateValuesNK.k );
 
 FF_Capital_Learning.curVarTwo = ActualLawOfMotion.A(1,1);
 FF_Capital_Learning.curVarOne = ActualLawOfMotion.capital(1,1);
@@ -190,17 +190,17 @@ for t = 2:times
        
     % households
     
-    [ HouseholdParameters.capital_Param(:,t) ]      = HH_Capital_Learning.do_BM_Learning();
-    [ HouseholdParameters.wage_Param(:,t) ]         = HH_Wage_Learning.do_BM_Learning();
-    [ HouseholdParameters.inflation_Param(:,t) ]    = HH_Inflation_Learning.do_BM_Learning();
-    [ HouseholdParameters.interestRate_Param(:,t) ] = HH_Interest_Learning.do_BM_Learning();
-    [ HouseholdParameters.markup_Param(:,t) ]       = HH_Markup_Learning.do_BM_Learning();
+    [ HouseholdParameters.capital_Param(:,t) ]      = HH_Capital_Learning.do_BM_Perceptron();
+    [ HouseholdParameters.wage_Param(:,t) ]         = HH_Wage_Learning.do_BM_Perceptron();
+    [ HouseholdParameters.inflation_Param(:,t) ]    = HH_Inflation_Learning.do_BM_Perceptron();
+    [ HouseholdParameters.interestRate_Param(:,t) ] = HH_Interest_Learning.do_BM_Perceptron();
+    [ HouseholdParameters.markup_Param(:,t) ]       = HH_Markup_Learning.do_BM_Perceptron();
     
     % firms
     
-    [ FirmsParameters.capital_Param(:,t) ]   = FF_Capital_Learning.do_BM_Learning();
-    [ FirmsParameters.inflation_Param(:,t) ] = FF_Inflation_Learning.do_BM_Learning();
-    [ FirmsParameters.markup_Param(:,t) ]    = FF_Markup_Learning.do_BM_Learning();
+    [ FirmsParameters.capital_Param(:,t) ]   = FF_Capital_Learning.do_BM_Perceptron();
+    [ FirmsParameters.inflation_Param(:,t) ] = FF_Inflation_Learning.do_BM_Perceptron();
+    [ FirmsParameters.markup_Param(:,t) ]    = FF_Markup_Learning.do_BM_Perceptron();
         
     % compute one step ahead forecast / PLM using updated parameters
     
@@ -285,6 +285,9 @@ for t = 2:times
 
     FF_Inflation_Learning.UpdateIntervals();
     FF_Markup_Learning.UpdateIntervals();
+    
+    disp('Periods Done:')
+    t
     
     
 end

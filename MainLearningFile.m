@@ -36,7 +36,7 @@ FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(
 % generate shock
 
 ActualLawOfMotion.A(1,1) = 0; % initial value of shock
-ActualLawOfMotion.A(1,2) = 100; %0.1*randn;
+ActualLawOfMotion.A(1,2) = 0.01*randn;
 
 for i = 3:times
     
