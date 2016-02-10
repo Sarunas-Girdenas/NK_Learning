@@ -1,4 +1,4 @@
-function [ Final_Inflation ] = SolveInflation2_PAR( ParameterValues, SteadyStateValuesNK, ParameterValuesLearning, t, storeResults, E_K, E_S,j,h )
+function [ Final_Inflation ] = SolveInflation2_PAR( ParameterValues, SteadyStateValuesNK, ParameterValuesLearning, t, storeResults, E_K, E_S, h )
     
     % PURPOSE: solve the inflation given the state variable and infinite horizon expectations
     % INPUT: state variables

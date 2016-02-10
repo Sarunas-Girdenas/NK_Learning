@@ -12,7 +12,8 @@ function [ average ] = calculateAverageMC(structName)
 
 	MatFileObject = matfile(structName);
     
-    times = 200;
+    % enter this a function rather than a number
+    times = 50;
     
     % we know that struct has one variable: 'storeResults'
     
@@ -68,9 +69,9 @@ function [ average ] = calculateAverageMC(structName)
                 
                 index = index + 1;
                 
-            end
-            
         end
         
     end
+    
+end
     

@@ -3,7 +3,7 @@
 
 % below is the initialization of learning, common to all the workers
 
-times = 200;
+times = 50;
 
 % define parameter values
 
@@ -39,7 +39,7 @@ Firms_PLM       = struct('capital',zeros(1,times),'inflation',zeros(1,times),'ma
 FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(3,times),'markup_Param',zeros(3,times));
 
 numPARloops          = 12;
-numShockRealizations = 2; % for each parallel loop
+numShockRealizations = 1000; % for each parallel loop
 % create container to store the data
 
 % initialize each worker at the RE equilibrium by loading RE data
@@ -79,11 +79,11 @@ E_S = {};
 
 % Households
 
-memoryLength_HH = 25; 
+memoryLength_HH = 20; 
 
 % firms
 
-memoryLength_FF = 25; 
+memoryLength_FF = 20; 
 
 
 for j = 1:numPARloops
@@ -99,7 +99,7 @@ for j = 1:numPARloops
 		% create shock realization for each worker
 
 		storeResults{j}.Actual{h}.A(1,1) = 0;
-		storeResults{j}.Actual{h}.A(1,2) = 0.005*randn; %abs( sqrt(3)*0.02*(rand-0.5) ); % random uniform variable between -1 and 1 with 0.01 std
+		storeResults{j}.Actual{h}.A(1,2) = 0.01*abs(rand-0.5); %abs( sqrt(3)*0.02*(rand-0.5) ); % random uniform variable between -1 and 1 with 0.01 std
 
 		for g = 3:times
 
@@ -327,7 +327,7 @@ parfor j = 1:numPARloops
 			[ E_K{j}{h}, E_S{j}{h} ] = Solve_Expecations_PAR( t, SteadyStateValuesNK, ParameterValuesLearning, ParameterValues, storeResults{j},j,h );
 
 
-			storeResults{j}.Actual{h}.inflation(1,t)     = SolveInflation2_PAR( ParameterValues, SteadyStateValuesNK, ParameterValuesLearning, t, storeResults{j}, E_K{j}{h}, E_S{j}{h}, j, h );
+			storeResults{j}.Actual{h}.inflation(1,t)     = SolveInflation2_PAR( ParameterValues, SteadyStateValuesNK, ParameterValuesLearning, t, storeResults{j}, E_K{j}{h}, E_S{j}{h}, h );
 			storeResults{j}.Actual{h}.interestRate(1,t)  = SteadyStateValuesNK.R*(1-ParameterValues.r_R)*ParameterValues.r_Infl*storeResults{j}.Actual{h}.inflation(1,t)-SteadyStateValuesNK.R*(1-ParameterValues.r_R)*ParameterValues.r_Infl+SteadyStateValuesNK.R;
 			storeResults{j}.Actual{h}.markup(1,t)        = -ParameterValues.theta*SteadyStateValuesNK.X/(1-ParameterValues.theta)/(1-ParameterValues.theta*ParameterValues.beta)*storeResults{j}.Actual{h}.inflation(1,t)+ParameterValues.theta*SteadyStateValuesNK.X...
     			/(1-ParameterValues.theta)/(1-ParameterValues.theta*ParameterValues.beta)+SteadyStateValuesNK.X/(1-ParameterValues.theta*ParameterValues.beta)*E_K{j}{h}+SteadyStateValuesNK.X;
@@ -408,3 +408,5 @@ clearvars -except storeResults
 % save the data in HDF5 format
 
 save('MC_Results_NN.mat','storeResults','-v7.3')
+
+clear all;
