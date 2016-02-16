@@ -85,7 +85,7 @@ classdef BoundedMemoryNeuralNetwork < handle
             % do linear perceptron now
             
             w         = zeros(1,3); % weights of perceptron
-            threshold = 1e-8; % threshold of convergence
+            threshold = 1e-7; % threshold of convergence
             
             hOld = 1;
             H = 0;
@@ -94,6 +94,8 @@ classdef BoundedMemoryNeuralNetwork < handle
             eta = 0.001;
             
             while abs(H - hOld) > threshold
+                
+                % stochastic gradient descent
                 
                 counter = counter + 1;
                 hOld    = H;
@@ -113,7 +115,7 @@ classdef BoundedMemoryNeuralNetwork < handle
                       
                 w = w - eta*grad_t;
                 
-                if counter >= 10e7
+                if counter >= 10e4
                     
                     break
                     

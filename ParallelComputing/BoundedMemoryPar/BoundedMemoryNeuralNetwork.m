@@ -76,7 +76,7 @@ classdef BoundedMemoryNeuralNetwork < handle
             % this function uses Linear Perceptron (Neural Network) to
             % approximate OLS
             
-            X = [ ones(size(obj.firstInterval')) obj.firstInterval' 100*obj.secondInterval' ];
+            X = [ ones(size(obj.firstInterval')) obj.firstInterval' obj.secondInterval' ];
             
             % normalize the data
             
@@ -86,13 +86,13 @@ classdef BoundedMemoryNeuralNetwork < handle
             % do linear perceptron now
             
             w         = zeros(1,3); % weights of perceptron
-            threshold = 1e-8; % threshold of convergence
+            threshold = 1e-7; % threshold of convergence
             
             hOld = 1;
             H = 0;
             counter = 0;
             
-            eta = 0.001;
+            eta = 0.0005;
             
             while abs(H - hOld) > threshold
                 
@@ -108,13 +108,13 @@ classdef BoundedMemoryNeuralNetwork < handle
                     % compute hypothesis
                     
                     H = w*x_t' - y_t;
-                    grad_t = grad_t + 2*H*x_t; %*exp(-w*x_t')/((1+exp(-w*x_t'))^(2));
+                    grad_t = grad_t + 2*H*x_t*exp(-w*x_t')/((1+exp(-w*x_t'))^(2));
                                      
                 end
                                  
                 w = w - eta*grad_t;
                 
-                if counter >= 10e7
+                if counter >= 10e4
                     
                     break
                     

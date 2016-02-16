@@ -3,7 +3,7 @@
 
 % below is the initialization of learning, common to all the workers
 
-times = 50;
+times = 100;
 
 % define parameter values
 
@@ -38,8 +38,8 @@ HouseholdParameters = struct('capital_Param',zeros(3,times),'wage_Param',zeros(3
 Firms_PLM       = struct('capital',zeros(1,times),'inflation',zeros(1,times),'markup',zeros(1,times),'A',zeros(1,times));
 FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(3,times),'markup_Param',zeros(3,times));
 
-numPARloops          = 12;
-numShockRealizations = 1000; % for each parallel loop
+numPARloops          = 6;
+numShockRealizations = 5; % for each parallel loop
 % create container to store the data
 
 % initialize each worker at the RE equilibrium by loading RE data
@@ -79,12 +79,11 @@ E_S = {};
 
 % Households
 
-memoryLength_HH = 20; 
+memoryLength_HH = 95; 
 
 % firms
 
-memoryLength_FF = 20; 
-
+memoryLength_FF = 95; 
 
 for j = 1:numPARloops
 
@@ -407,6 +406,6 @@ clearvars -except storeResults
 
 % save the data in HDF5 format
 
-save('MC_Results_NN.mat','storeResults','-v7.3')
+save('MC_Results_NNt_100_w10_2.mat','storeResults','-v7.3')
 
 clear all;
