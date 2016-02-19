@@ -38,8 +38,8 @@ HouseholdParameters = struct('capital_Param',zeros(3,times),'wage_Param',zeros(3
 Firms_PLM       = struct('capital',zeros(1,times),'inflation',zeros(1,times),'markup',zeros(1,times),'A',zeros(1,times));
 FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(3,times),'markup_Param',zeros(3,times));
 
-numPARloops          = 6;
-numShockRealizations = 5; % for each parallel loop
+numPARloops          = 1;
+numShockRealizations = 1; % for each parallel loop
 % create container to store the data
 
 % initialize each worker at the RE equilibrium by loading RE data
@@ -56,19 +56,11 @@ zMatStore   	   = {}; % store updated zMat in each loop
 
 % households
 
-HH_D_Out_Capital   = {};
-HH_D_Out_Wage      = {};
-HH_D_Out_Inflation = {};
-HH_D_Out_Markup    = {};
-HH_D_Out_Interest  = {};
 B_Households       = {};
 tmpZ_HH            = {};
 
 % firms
 
-FF_D_Out_Capital   = {};
-FF_D_Out_Inflation = {};
-FF_D_Out_Markup    = {};
 B_Firms            = {};
 tmpZ_FF            = {};
 
@@ -98,7 +90,7 @@ for j = 1:numPARloops
 		% create shock realization for each worker
 
 		storeResults{j}.Actual{h}.A(1,1) = 0;
-		storeResults{j}.Actual{h}.A(1,2) = 0.01*abs(rand-0.5); %abs( sqrt(3)*0.02*(rand-0.5) ); % random uniform variable between -1 and 1 with 0.01 std
+		storeResults{j}.Actual{h}.A(1,2) = 0.005; %0.01*abs(rand-0.5); %abs( sqrt(3)*0.02*(rand-0.5) ); % random uniform variable between -1 and 1 with 0.01 std
 
 		for g = 3:times
 
@@ -256,6 +248,9 @@ parfor j = 1:numPARloops
         disp('--');
 
 		for t = 2:times
+            
+            disp('Time Periods: ')
+            t
 
 
 			% update the state variable for all workers
@@ -323,10 +318,12 @@ parfor j = 1:numPARloops
 
 			% solve for Actual Law of Motion (actually, AlM is always the same but we keep this part for consistency)
 
-			[ E_K{j}{h}, E_S{j}{h} ] = Solve_Expecations_PAR( t, SteadyStateValuesNK, ParameterValuesLearning, ParameterValues, storeResults{j},j,h );
+			[ E_K{j}{h}, E_S{j}{h} ] = Solve_Expecations_PAR( t, SteadyStateValuesNK, ParameterValuesLearning, ParameterValues, storeResults{j},h );
 
 
 			storeResults{j}.Actual{h}.inflation(1,t)     = SolveInflation2_PAR( ParameterValues, SteadyStateValuesNK, ParameterValuesLearning, t, storeResults{j}, E_K{j}{h}, E_S{j}{h}, h );
+
+
 			storeResults{j}.Actual{h}.interestRate(1,t)  = SteadyStateValuesNK.R*(1-ParameterValues.r_R)*ParameterValues.r_Infl*storeResults{j}.Actual{h}.inflation(1,t)-SteadyStateValuesNK.R*(1-ParameterValues.r_R)*ParameterValues.r_Infl+SteadyStateValuesNK.R;
 			storeResults{j}.Actual{h}.markup(1,t)        = -ParameterValues.theta*SteadyStateValuesNK.X/(1-ParameterValues.theta)/(1-ParameterValues.theta*ParameterValues.beta)*storeResults{j}.Actual{h}.inflation(1,t)+ParameterValues.theta*SteadyStateValuesNK.X...
     			/(1-ParameterValues.theta)/(1-ParameterValues.theta*ParameterValues.beta)+SteadyStateValuesNK.X/(1-ParameterValues.theta*ParameterValues.beta)*E_K{j}{h}+SteadyStateValuesNK.X;
@@ -401,11 +398,42 @@ clearvars -except storeResults
 % store variables and write some codes to store the data & take the mean
 % from MC simulations
 
+
 % all the variables are stored in storeResults struct
 % compute the mean of each variable
 
 % save the data in HDF5 format
 
-save('MC_Results_NNt_100_w10_2.mat','storeResults','-v7.3')
+save('MC_Results_NNt_100_w95_3.mat','storeResults','-v7.3')
 
 clear all;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

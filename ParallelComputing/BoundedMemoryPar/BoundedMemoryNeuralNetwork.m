@@ -82,7 +82,6 @@ classdef BoundedMemoryNeuralNetwork < handle
             
             Y = obj.thirdInterval';
             
-            
             % do linear perceptron now
             
             w         = zeros(1,3); % weights of perceptron
@@ -92,9 +91,11 @@ classdef BoundedMemoryNeuralNetwork < handle
             H = 0;
             counter = 0;
             
-            eta = 0.0005;
+            eta = 0.001;
             
             while abs(H - hOld) > threshold
+                
+                % stochastic gradient descent
                 
                 counter = counter + 1;
                 hOld    = H;
@@ -111,7 +112,21 @@ classdef BoundedMemoryNeuralNetwork < handle
                     grad_t = grad_t + 2*H*x_t*exp(-w*x_t')/((1+exp(-w*x_t'))^(2));
                                      
                 end
-                                 
+                
+                % Bold Driver Algorithm
+                
+                if H - hOld > 10e-4
+                    
+                    eta = eta*0.4;
+                    
+                else
+                    
+                    eta = eta*1.04;
+                    
+                end
+                
+                % End of Bold Driver
+                      
                 w = w - eta*grad_t;
                 
                 if counter >= 10e4
@@ -123,6 +138,7 @@ classdef BoundedMemoryNeuralNetwork < handle
             end
             
             paramsOut = w';
+                    
 
         end
         

@@ -12,8 +12,8 @@ function [ E_K, E_S ] = Solve_Expecations( t, SteadyStateValuesNK, ParameterValu
     % OUTPUT:  E_K, E_S - infinite horizon forecast values from households and retailers
     % see paper for definition of E_S and E_K
     
-    B1 = [ FirmsParameters.capital_Param(2,t) FirmsParameters.capital_Param(3,t);0 ParameterValues.rho ];
-    B2 = [ HouseholdParameters.capital_Param(2,t) HouseholdParameters.capital_Param(3,t);0 ParameterValues.rho ];
+    B1 = [ FirmsParameters.capital_Param(2,t) FirmsParameters.capital_Param(3,t);0 ParameterValues.rho ];   
+    B2 = [ HouseholdParameters.capital_Param(2,t) HouseholdParameters.capital_Param(3,t);0 ParameterValues.rho ];    
     
     E_K  = 0;
     tmp1 = 0;

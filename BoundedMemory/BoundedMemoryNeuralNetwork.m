@@ -76,7 +76,7 @@ classdef BoundedMemoryNeuralNetwork < handle
             % this function uses Linear Perceptron (Neural Network) to
             % approximate OLS
             
-            X = [ ones(size(obj.firstInterval')) obj.firstInterval' 100*obj.secondInterval' ];
+            X = [ ones(size(obj.firstInterval')) obj.firstInterval' obj.secondInterval' ];
             
             % normalize the data
             
@@ -112,6 +112,20 @@ classdef BoundedMemoryNeuralNetwork < handle
                     grad_t = grad_t + 2*H*x_t*exp(-w*x_t')/((1+exp(-w*x_t'))^(2));
                                      
                 end
+                
+                % Bold Driver Algorithm
+                
+                if H - hOld > 10e-4
+                    
+                    eta = eta*0.4;
+                    
+                else
+                    
+                    eta = eta*1.04;
+                    
+                end
+                
+                % End of Bold Driver
                       
                 w = w - eta*grad_t;
                 

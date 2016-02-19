@@ -36,7 +36,7 @@ FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(
 % generate shock
 
 ActualLawOfMotion.A(1,1) = 0; % initial value of shock
-ActualLawOfMotion.A(1,2) = 0.01*abs(rand-0.5);
+ActualLawOfMotion.A(1,2) = 0.005; %0.01*abs(rand-0.5);
 
 for i = 3:times
     
@@ -100,11 +100,11 @@ load REvariance
 
 % Households
 
-memoryLength_HH = 50; 
+memoryLength_HH = 95; 
 
 % firms
 
-memoryLength_FF = 50; 
+memoryLength_FF = 95; 
         
 % households
 

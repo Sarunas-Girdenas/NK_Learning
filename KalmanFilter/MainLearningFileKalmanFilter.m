@@ -36,7 +36,7 @@ FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(
 % generate shock
 
 ActualLawOfMotion.A(1,1) = 0; % initial value of shock
-ActualLawOfMotion.A(1,2) = 0.01*randn;
+ActualLawOfMotion.A(1,2) = 0.005; %0.01*randn;
 
 for i = 3:times
     
@@ -89,30 +89,36 @@ Firms_PLM.markup(1,1)    = SteadyStateValuesNK.X;
 
 forecastPeriod = 100; % # of periods to compute forecast for Households and Firms
 
-% load initial second moment matrix from RE (obtained from dynare)
-
 load REvariance
 
-initial_P_MatrixOld = randn(3,3);
+% initialize input of Kalman Filter
 
-H_matrix = [ 1 SteadyStateValuesNK.k 0; SteadyStateValuesNK.k SteadyStateValuesNK.k^2+REvariance(1,1) REvariance(1,9);0 REvariance(9,1) REvariance(9,9) ];
+Previous_P = randn(3,3);
+
+H_vec = [1 SteadyStateValuesNK.k 0];
+
+Q_mat = 0.001*eye(3);
+
+r_parameter = 0.01;
+
+
 
 % initialize learning as a class. At this point we can change learning
 % algorithm
         
 % households
-                        KL_Learning(previousParameters,P_MatrixOld,H_matrix,zMat,variable)
-HH_Capital_Learning   = KL_Learning(HouseholdParameters.capital_Param(:,1), initial_P_MatrixOld, H_matrix, [ 1 Household_PLM.capital(1,1) ActualLawOfMotion.A(1,1) ]',ActualLawOfMotion.capital(1,1) );
-HH_Wage_Learning      = KL_Learning(HouseholdParameters.wage_Param(:,1), initial_P_MatrixOld, H_matrix, [ 1 Household_PLM.capital(1,1) ActualLawOfMotion.A(1,1) ]',ActualLawOfMotion.wage(1,1) );
-HH_Inflation_Learning = KL_Learning(HouseholdParameters.inflation_Param(:,1), initial_P_MatrixOld, H_matrix, [ 1 Household_PLM.capital(1,1) ActualLawOfMotion.A(1,1) ]',ActualLawOfMotion.inflation(1,1) );
-HH_Interest_Learning  = KL_Learning(HouseholdParameters.interestRate_Param(:,1), initial_P_MatrixOld, H_matrix, [ 1 Household_PLM.capital(1,1) ActualLawOfMotion.A(1,1) ]',ActualLawOfMotion.interestRate(1,1) );
-HH_Markup_Learning    = KL_Learning(HouseholdParameters.markup_Param(:,1), initial_P_MatrixOld, H_matrix, [ 1 Household_PLM.capital(1,1) ActualLawOfMotion.A(1,1) ]',ActualLawOfMotion.markup(1,1) );
+                        
+HH_Capital_Learning   = Kalman_Learning(HouseholdParameters.capital_Param(:,1),Previous_P,H_vec,Q_mat,r_parameter,ActualLawOfMotion.capital(1,1));
+HH_Wage_Learning      = Kalman_Learning(HouseholdParameters.wage_Param(:,1), Previous_P, H_vec, Q_mat,r_parameter,ActualLawOfMotion.wage(1,1));
+HH_Inflation_Learning = Kalman_Learning(HouseholdParameters.inflation_Param(:,1),Previous_P, H_vec, Q_mat,r_parameter,ActualLawOfMotion.inflation(1,1) );
+HH_Interest_Learning  = Kalman_Learning(HouseholdParameters.interestRate_Param(:,1),Previous_P, H_vec, Q_mat,r_parameter,ActualLawOfMotion.interestRate(1,1) );
+HH_Markup_Learning    = Kalman_Learning(HouseholdParameters.markup_Param(:,1), Previous_P, H_vec, Q_mat,r_parameter,ActualLawOfMotion.markup(1,1) );
 
 % firms
-        
-FF_Capital_Learning   = CG_Learning(0.1,FirmsParameters.capital_Param(:,1), initial_D_Matrix, [ 1 Firms_PLM.capital(1,1) ActualLawOfMotion.A(1,1) ]',ActualLawOfMotion.capital(1,1) );
-FF_Inflation_Learning = CG_Learning(0.1,FirmsParameters.inflation_Param(:,1), initial_D_Matrix, [ 1 Firms_PLM.capital(1,1) ActualLawOfMotion.A(1,1) ]',ActualLawOfMotion.inflation(1,1) );
-FF_Markup_Learning    = CG_Learning(0.1,FirmsParameters.markup_Param(:,1), initial_D_Matrix, [ 1 Firms_PLM.capital(1,1) ActualLawOfMotion.A(1,1) ]',ActualLawOfMotion.markup(1,1) );
+                         
+FF_Capital_Learning   = Kalman_Learning(FirmsParameters.capital_Param(:,1),Previous_P,H_vec,Q_mat,r_parameter,ActualLawOfMotion.capital(1,1));
+FF_Inflation_Learning = Kalman_Learning(FirmsParameters.inflation_Param(:,1),Previous_P, H_vec, Q_mat,r_parameter,ActualLawOfMotion.inflation(1,1) );
+FF_Markup_Learning    = Kalman_Learning(FirmsParameters.markup_Param(:,1), Previous_P, H_vec, Q_mat,r_parameter,ActualLawOfMotion.markup(1,1) );
 
 % main learning loop
 
@@ -135,17 +141,19 @@ for t = 2:times
     
     % households
     
-    [ HouseholdParameters.capital_Param(:,t), HH_D_Out_Capital ]        = HH_Capital_Learning.do_CG_Learning();
-    [ HouseholdParameters.wage_Param(:,t), HH_D_Out_Wage ]              = HH_Wage_Learning.do_CG_Learning();
-    [ HouseholdParameters.inflation_Param(:,t), HH_D_Out_Inflation ]    = HH_Inflation_Learning.do_CG_Learning();
-    [ HouseholdParameters.interestRate_Param(:,t), HH_D_Out_Interest ]  = HH_Interest_Learning.do_CG_Learning();
-    [ HouseholdParameters.markup_Param(:,t), HH_D_Out_Markup ]          = HH_Markup_Learning.do_CG_Learning();
+    % Prior prediction
+    
+    HouseholdParameters.capital_Param(:,t)        = HH_Capital_Learning.Predict_Kalman_Learning();
+    HouseholdParameters.wage_Param(:,t)           = HH_Wage_Learning.Predict_Kalman_Learning();
+    HouseholdParameters.inflation_Param(:,t)      = HH_Inflation_Learning.Predict_Kalman_Learning();
+    HouseholdParameters.interestRate_Param(:,t)   = HH_Interest_Learning.Predict_Kalman_Learning();
+    HouseholdParameters.markup_Param(:,t)         = HH_Markup_Learning.Predict_Kalman_Learning();
     
     % firms
     
-    [ FirmsParameters.capital_Param(:,t), FF_D_Out_Capital ]     = FF_Capital_Learning.do_CG_Learning();
-    [ FirmsParameters.inflation_Param(:,t), FF_D_Out_Inflation ] = FF_Inflation_Learning.do_CG_Learning();
-    [ FirmsParameters.markup_Param(:,t), FF_D_Out_Markup ]       = FF_Markup_Learning.do_CG_Learning();
+    FirmsParameters.capital_Param(:,t)         = FF_Capital_Learning.Predict_Kalman_Learning();
+    FirmsParameters.inflation_Param(:,t)       = FF_Inflation_Learning.Predict_Kalman_Learning();
+    FirmsParameters.markup_Param(:,t)          = FF_Markup_Learning.Predict_Kalman_Learning();
         
     % compute one step ahead forecast / PLM using updated parameters
     
@@ -188,31 +196,46 @@ for t = 2:times
     
     % households
         
-    HH_Capital_Learning   = CG_Learning(0.1,HouseholdParameters.capital_Param(:,t), HH_D_Out_Capital, zMat,ActualLawOfMotion.capital(1,t) );
-    HH_Wage_Learning      = CG_Learning(0.1,HouseholdParameters.wage_Param(:,t), HH_D_Out_Wage, zMat,ActualLawOfMotion.wage(1,t) );
-    HH_Inflation_Learning = CG_Learning(0.1,HouseholdParameters.inflation_Param(:,t), HH_D_Out_Inflation, zMat,ActualLawOfMotion.inflation(1,t) );
-    HH_Interest_Learning  = CG_Learning(0.1,HouseholdParameters.interestRate_Param(:,t), HH_D_Out_Interest, zMat,ActualLawOfMotion.interestRate(1,t) );
-    HH_Markup_Learning    = CG_Learning(0.1,HouseholdParameters.markup_Param(:,t), HH_D_Out_Markup, zMat,ActualLawOfMotion.markup(1,t) );
-
+    HouseholdParameters.capital_Param(:,t)        = HH_Capital_Learning.Update_Kalman_Learning();
+    HouseholdParameters.wage_Param(:,t)           = HH_Wage_Learning.Update_Kalman_Learning();
+    HouseholdParameters.inflation_Param(:,t)      = HH_Inflation_Learning.Update_Kalman_Learning();
+    HouseholdParameters.interestRate_Param(:,t)   = HH_Interest_Learning.Update_Kalman_Learning();
+    HouseholdParameters.markup_Param(:,t)         = HH_Markup_Learning.Update_Kalman_Learning();
+    
     % firms
-        
-    FF_Capital_Learning   = CG_Learning(0.1,FirmsParameters.capital_Param(:,t), FF_D_Out_Capital, zMat,ActualLawOfMotion.capital(1,t) );
-    FF_Inflation_Learning = CG_Learning(0.1,FirmsParameters.inflation_Param(:,t), FF_D_Out_Inflation, zMat,ActualLawOfMotion.inflation(1,t) );
-    FF_Markup_Learning    = CG_Learning(0.1,FirmsParameters.markup_Param(:,t), FF_D_Out_Markup, zMat,ActualLawOfMotion.markup(1,t) );
+    
+    FirmsParameters.capital_Param(:,t)         = FF_Capital_Learning.Update_Kalman_Learning();
+    FirmsParameters.inflation_Param(:,t)       = FF_Inflation_Learning.Update_Kalman_Learning();
+    FirmsParameters.markup_Param(:,t)          = FF_Markup_Learning.Update_Kalman_Learning();
+    
+    % State variables update
+    
+    HH_Capital_Learning.H_vec = zMat';     HH_Capital_Learning.variable = ActualLawOfMotion.capital(t);
+    HH_Wage_Learning.H_vec = zMat';        HH_Wage_Learning.variable = ActualLawOfMotion.wage(t);
+    HH_Inflation_Learning.H_vec = zMat';   HH_Inflation_Learning.variable = ActualLawOfMotion.inflation(t);
+    HH_Interest_Learning.H_vec = zMat';    HH_Interest_Learning.variable = ActualLawOfMotion.interestRate(t);
+    HH_Markup_Learning.H_vec = zMat';      HH_Markup_Learning.variable = ActualLawOfMotion.markup(t);
+    
+    FF_Capital_Learning.H_vec = zMat';     FF_Capital_Learning.variable = ActualLawOfMotion.capital(t);
+    FF_Inflation_Learning.H_vec = zMat';   FF_Inflation_Learning.variable = ActualLawOfMotion.inflation(t);
+    FF_Markup_Learning.H_vec = zMat';      FF_Markup_Learning.variable = ActualLawOfMotion.markup(t);
+    
+    
+    
     
         
 end
 
 toc
-
-figure
-plot(ActualLawOfMotion.capital)
-hold
-plot(Household_PLM.capital,'r')
-figure
-plot(HouseholdParameters.capital_Param')
-figure
-plot(Household_PLM.inflation)
+% 
+% figure
+% plot(ActualLawOfMotion.capital)
+% hold
+% plot(Household_PLM.capital,'r')
+% figure
+% plot(HouseholdParameters.capital_Param')
+% figure
+% plot(Household_PLM.inflation)
 
 
 
