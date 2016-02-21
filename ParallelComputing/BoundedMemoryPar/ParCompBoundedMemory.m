@@ -177,6 +177,7 @@ for j = 1:numPARloops
 		LearningAlgorithms{j}.Households{h}.Wage.UpdateIntervals();
 		LearningAlgorithms{j}.Households{h}.Inflation.UpdateIntervals();
 		LearningAlgorithms{j}.Households{h}.Interest.UpdateIntervals();
+        LearningAlgorithms{j}.Households{h}.Markup.UpdateIntervals();
 
 		% firms
 
@@ -192,7 +193,7 @@ for j = 1:numPARloops
 		
 		LearningAlgorithms{j}.Firms{h}.Inflation.curVarOne = storeResults{j}.Actual{h}.capital(1,1);
 		LearningAlgorithms{j}.Firms{h}.Inflation.curVarTwo = storeResults{j}.Actual{h}.A(1,1);
-		LearningAlgorithms{j}.Firms{h}.Inflation.curVarOne = storeResults{j}.Actual{h}.inflation(1,1);
+		LearningAlgorithms{j}.Firms{h}.Inflation.curVarThree = storeResults{j}.Actual{h}.inflation(1,1);
 
 		LearningAlgorithms{j}.Firms{h}.Markup.curVarOne    = storeResults{j}.Actual{h}.capital(1,1);
 		LearningAlgorithms{j}.Firms{h}.Markup.curVarTwo    = storeResults{j}.Actual{h}.A(1,1);
