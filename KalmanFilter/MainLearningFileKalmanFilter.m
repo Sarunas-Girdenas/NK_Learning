@@ -1,6 +1,7 @@
-% in this file we test CG learning
+% this is Kalman Filter Learning
+
 tic
-times = 200;
+times = 100;
 
 % define parameter values
 
@@ -89,11 +90,9 @@ Firms_PLM.markup(1,1)    = SteadyStateValuesNK.X;
 
 forecastPeriod = 100; % # of periods to compute forecast for Households and Firms
 
-load REvariance
-
 % initialize input of Kalman Filter
 
-Previous_P = randn(3,3);
+Previous_P = eye(3,3);
 
 H_vec = [1 SteadyStateValuesNK.k 0];
 
