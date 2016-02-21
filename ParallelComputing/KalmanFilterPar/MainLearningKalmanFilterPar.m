@@ -39,7 +39,7 @@ Firms_PLM       = struct('capital',zeros(1,times),'inflation',zeros(1,times),'ma
 FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(3,times),'markup_Param',zeros(3,times));
 
 numPARloops          = 12;
-numShockRealizations = 500; % for each parallel loop
+numShockRealizations = 1000; % for each parallel loop
 % create container to store the data
 
 % initialize each worker at the RE equilibrium by loading RE data
@@ -91,7 +91,7 @@ for j = 1:numPARloops
         % create shock realization for each worker
 
         storeResults{j}.Actual{h}.A(1,1) = 0;
-        storeResults{j}.Actual{h}.A(1,2) = 0.01*abs(rand-0.5); %abs( sqrt(3)*0.02*(rand-0.5) ); % random uniform variable between -1 and 1 with 0.01 std
+        storeResults{j}.Actual{h}.A(1,2) = abs( sqrt(3)*0.02*(rand-0.5) ); % random uniform variable between -1 and 1 with 0.01 std
 
         for g = 3:times
 
