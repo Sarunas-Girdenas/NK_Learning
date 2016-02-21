@@ -52,7 +52,7 @@ shocks;
 
 var e_A; // productivity shock
 
-stderr 0.1;
+stderr 0.01;
 
 end;
 
@@ -63,6 +63,6 @@ steady;
 
 check;
 
-stoch_simul(irf=200,order = 1);
+stoch_simul(irf=100,order = 1);
 
 conditional_variance_decomposition=1;

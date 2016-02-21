@@ -112,8 +112,8 @@ memoryLength_FF = 95;
         
 HH_Capital_Learning   = BoundedMemoryNeuralNetwork( memoryLength_HH, HouseholdParameters.capital_Param(:,1), SteadyStateValuesNK.k, SteadyStateValuesNK.k );
 HH_Wage_Learning      = BoundedMemoryNeuralNetwork( memoryLength_HH, HouseholdParameters.wage_Param(:,1), SteadyStateValuesNK.w, SteadyStateValuesNK.k );
-HH_Inflation_Learning = BoundedMemoryNeuralNetwork( memoryLength_HH, HouseholdParameters.interestRate_Param(:,1), 1, SteadyStateValuesNK.k );
-HH_Interest_Learning  = BoundedMemoryNeuralNetwork( memoryLength_HH, HouseholdParameters.inflation_Param(:,1), SteadyStateValuesNK.R, SteadyStateValuesNK.k );
+HH_Inflation_Learning = BoundedMemoryNeuralNetwork( memoryLength_HH, HouseholdParameters.inflation_Param(:,1), 1, SteadyStateValuesNK.k );
+HH_Interest_Learning  = BoundedMemoryNeuralNetwork( memoryLength_HH, HouseholdParameters.interestRate_Param(:,1), SteadyStateValuesNK.R, SteadyStateValuesNK.k );
 HH_Markup_Learning    = BoundedMemoryNeuralNetwork( memoryLength_HH, HouseholdParameters.markup_Param(:,1), SteadyStateValuesNK.X, SteadyStateValuesNK.k );
 
 HH_Capital_Learning.curVarTwo = ActualLawOfMotion.A(1,1);
@@ -292,15 +292,15 @@ for t = 2:times
 end
 
 toc
-
-figure
-plot(ActualLawOfMotion.capital)
-hold
-plot(Household_PLM.capital,'r')
-figure
-plot(HouseholdParameters.capital_Param')
-figure
-plot(Household_PLM.inflation)
+% 
+% figure
+ plot(ActualLawOfMotion.capital)
+% hold
+% plot(Household_PLM.capital,'r')
+% figure
+% plot(HouseholdParameters.capital_Param')
+% figure
+% plot(Household_PLM.inflation)
 
 
 

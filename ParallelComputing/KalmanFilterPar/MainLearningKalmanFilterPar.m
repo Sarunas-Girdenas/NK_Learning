@@ -38,8 +38,8 @@ HouseholdParameters = struct('capital_Param',zeros(3,times),'wage_Param',zeros(3
 Firms_PLM       = struct('capital',zeros(1,times),'inflation',zeros(1,times),'markup',zeros(1,times),'A',zeros(1,times));
 FirmsParameters = struct('capital_Param',zeros(3,times),'inflation_Param',zeros(3,times),'markup_Param',zeros(3,times));
 
-numPARloops          = 12;
-numShockRealizations = 500; % for each parallel loop
+numPARloops          = 1;
+numShockRealizations = 1; % for each parallel loop
 % create container to store the data
 
 % initialize each worker at the RE equilibrium by loading RE data
@@ -67,7 +67,7 @@ E_S = {};
 
 % initialize input for Kalman Filter
 
-Previous_P = randn(3,3);
+Previous_P = eye(3);%randn(3,3);
 
 H_vec = [1 SteadyStateValuesNK.k 0];
 
@@ -91,7 +91,7 @@ for j = 1:numPARloops
         % create shock realization for each worker
 
         storeResults{j}.Actual{h}.A(1,1) = 0;
-        storeResults{j}.Actual{h}.A(1,2) = 0.01*abs(rand-0.5); %abs( sqrt(3)*0.02*(rand-0.5) ); % random uniform variable between -1 and 1 with 0.01 std
+        storeResults{j}.Actual{h}.A(1,2) =  0.005; % 0.01*abs(rand-0.5); %abs( sqrt(3)*0.02*(rand-0.5) ); % random uniform variable between -1 and 1 with 0.01 std
 
         for g = 3:times
 
