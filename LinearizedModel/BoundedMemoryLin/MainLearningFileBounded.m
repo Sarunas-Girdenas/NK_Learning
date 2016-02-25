@@ -1,3 +1,5 @@
+
+
 % in this file we test CG learning
 tic
 times = 100;
@@ -100,11 +102,11 @@ load REvariance
 
 % Households
 
-memoryLength_HH = 90; 
+memoryLength_HH = 10; 
 
 % firms
 
-memoryLength_FF = 90; 
+memoryLength_FF = 10; 
         
 % households
 
@@ -186,8 +188,7 @@ for t = 2:times
     FF_Capital_Learning.UpdateIntervals();
     
     zMat = [1 ActualLawOfMotion.capital(1,t) ActualLawOfMotion.A(1,t)]';
-    
-       
+      
     % households
     
     [ HouseholdParameters.capital_Param(:,t) ]      = HH_Capital_Learning.do_BM_Perceptron();
@@ -229,16 +230,21 @@ for t = 2:times
     % now solve for actual law of motion (RE)
     
     [ E_K, E_S ] = Solve_Expecations( t, SteadyStateValuesNK, ParameterValuesLearning, ParameterValues, HouseholdParameters, FirmsParameters, ActualLawOfMotion );
-        
-    ActualLawOfMotion.inflation(1,t)     = SolveInflation2( ParameterValues, SteadyStateValuesNK, ParameterValuesLearning, t, ActualLawOfMotion, E_K, E_S );
-    ActualLawOfMotion.interestRate(1,t)  = SteadyStateValuesNK.R*(1-ParameterValues.r_R)*ParameterValues.r_Infl*ActualLawOfMotion.inflation(1,t)-SteadyStateValuesNK.R*(1-ParameterValues.r_R)*ParameterValues.r_Infl+SteadyStateValuesNK.R;
-    ActualLawOfMotion.markup(1,t)        = -ParameterValues.theta*SteadyStateValuesNK.X/(1-ParameterValues.theta)/(1-ParameterValues.theta*ParameterValues.beta)*ActualLawOfMotion.inflation(1,t)+ParameterValues.theta*SteadyStateValuesNK.X...
-    /(1-ParameterValues.theta)/(1-ParameterValues.theta*ParameterValues.beta)+SteadyStateValuesNK.X/(1-ParameterValues.theta*ParameterValues.beta)*E_K+SteadyStateValuesNK.X;
-    ActualLawOfMotion.capitalReturn(1,t) = ActualLawOfMotion.interestRate(1,t)/ActualLawOfMotion.inflation(1,t)-1+ParameterValues.delta;
-    ActualLawOfMotion.labour(1,t)        = ActualLawOfMotion.capital(1,t)*(ActualLawOfMotion.markup(1,t)*ActualLawOfMotion.capitalReturn(1,t)/ParameterValues.alpha/exp(ActualLawOfMotion.A(1,t)))^(1/(1-ParameterValues.alpha));
-    ActualLawOfMotion.wage(1,t)          = (1-ParameterValues.alpha)*exp(ActualLawOfMotion.A(1,t))*(ActualLawOfMotion.capital(1,t)/ActualLawOfMotion.labour(1,t))^ParameterValues.alpha/ActualLawOfMotion.markup(1,t);
-    ActualLawOfMotion.consumption(1,t)   = ActualLawOfMotion.wage(1,t)*ActualLawOfMotion.labour(1,t)^(1-ParameterValues.eta);
-       
+    
+    b_vec = zeros(7,1);   
+    b_vec(2,1) = ( -ActualLawOfMotion.A(1,t) + (1-ParameterValues.alpha)*(ActualLawOfMotion.capital(1,t)/SteadyStateValuesNK.k-1) );
+    b_vec(3,1) =  -ActualLawOfMotion.A(1,t) - ParameterValues.alpha*(ActualLawOfMotion.capital(1,t)/SteadyStateValuesNK.k-1);
+    b_vec(5,1) = E_K;
+    b_vec(6,1) = ParameterValuesLearning.Ca*ActualLawOfMotion.A(1,t) + ParameterValuesLearning.Ck*(ActualLawOfMotion.capital(1,t)-SteadyStateValuesNK.k) + SteadyStateValuesNK.R*(ActualLawOfMotion.capital(1,t-1)-SteadyStateValuesNK.k) + SteadyStateValuesNK.k*(ActualLawOfMotion.interestRate(1,t-1)-SteadyStateValuesNK.R)+ E_S;
+    ALM_vec = ParameterValuesLearning.V_matrix*b_vec;
+    ActualLawOfMotion.inflation(1,t) = ALM_vec(7,1) + 1;
+    ActualLawOfMotion.interestRate(1,t) = ALM_vec(6,1) + SteadyStateValuesNK.R;
+    ActualLawOfMotion.markup(1,t) = ALM_vec(4,1) +SteadyStateValuesNK.X;
+    ActualLawOfMotion.capitalReturn(1,t) = ALM_vec(5,1) + SteadyStateValuesNK.rk;
+    ActualLawOfMotion.labour(1,t) = ALM_vec(1,1) + SteadyStateValuesNK.L;
+    ActualLawOfMotion.wage(1,t) =  ALM_vec(2,1) + SteadyStateValuesNK.w;
+    ActualLawOfMotion.consumption(1,t) = ALM_vec(3,1) + SteadyStateValuesNK.c;
+
     % Update learning algorithms for next iteration
     
     
@@ -303,9 +309,6 @@ toc
 % plot(Household_PLM.inflation)
 
 % check if the intervals are the same:
-
-intervals = [ HH_Capital_Learning.secondInterval' HH_Wage_Learning.secondInterval' ];
-
 
 
 

@@ -91,7 +91,7 @@ classdef BoundedMemoryNeuralNetwork < handle
             H = 0;
             counter = 0;
             
-            eta = 0.001;
+            eta = 0.005;
             
             while abs(H - hOld) > threshold
                 

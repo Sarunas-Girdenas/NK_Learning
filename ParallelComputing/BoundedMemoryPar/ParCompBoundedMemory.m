@@ -71,11 +71,11 @@ E_S = {};
 
 % Households
 
-memoryLength_HH = 95; 
+memoryLength_HH = 20; 
 
 % firms
 
-memoryLength_FF = 95; 
+memoryLength_FF = 20; 
 
 for j = 1:numPARloops
 
@@ -90,7 +90,7 @@ for j = 1:numPARloops
 		% create shock realization for each worker
 
 		storeResults{j}.Actual{h}.A(1,1) = 0;
-		storeResults{j}.Actual{h}.A(1,2) = 0.005; %0.01*abs(rand-0.5); %abs( sqrt(3)*0.02*(rand-0.5) ); % random uniform variable between -1 and 1 with 0.01 std
+		storeResults{j}.Actual{h}.A(1,2) = 0.005; %abs( sqrt(3)*0.02*(rand-0.5) ); % random uniform variable between -1 and 1 with 0.01 std
 
 		for g = 3:times
 
@@ -394,7 +394,7 @@ end
 delete(gcp);
 
 % clear redundant variables
-clearvars -except storeResults
+%clearvars -except storeResults
 
 % store variables and write some codes to store the data & take the mean
 % from MC simulations
@@ -405,9 +405,9 @@ clearvars -except storeResults
 
 % save the data in HDF5 format
 
-save('MC_Results_NNt_100_w95_3.mat','storeResults','-v7.3')
+%save('MC_Results_NNt_100_w95_3.mat','storeResults','-v7.3')
 
-clear all;
+%clear all;
 
 
 
