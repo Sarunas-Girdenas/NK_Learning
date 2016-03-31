@@ -1,0 +1,125 @@
+Starting Dynare (version 4.4.3).
+Starting preprocessing of the model file ...
+Found 10 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+Processing outputs ...done
+Preprocessing completed.
+Starting MATLAB/Octave computing.
+
+
+
+
+Residuals of the static equations:
+
+Equation number 1 : 0
+Equation number 2 : 0
+Equation number 3 : 0
+Equation number 4 : 0
+Equation number 5 : 0
+Equation number 6 : 0
+Equation number 7 : 0
+Equation number 8 : 0
+Equation number 9 : 0
+Equation number 10 : 0
+
+
+
+STEADY-STATE RESULTS:
+
+k    		 0
+w    		 0
+R    		 0
+Infl 		 0
+X    		 0
+L    		 0
+c    		 0
+rk   		 0
+A    		 0
+Y    		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+
+             0.9              0.9                0
+           0.919            0.919                0
+           1.198            1.198                0
+           2.003            2.003                0
+
+
+There are 2 eigenvalue(s) larger than 1 in modulus 
+for 2 forward-looking variable(s)
+
+The rank condition is verified.
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000100
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.919036        0.406734        0.003630        0.049795       -0.065945       -0.113658        0.520392       -0.625960               0        0.227131
+A(-1)                       0.168994        0.698631       -0.004487       -0.061557        0.176556        0.244185        0.454446        0.773821        0.900000        1.119372
+e_A                         0.187771        0.776256       -0.004986       -0.068396        0.196174        0.271317        0.504940        0.859802        1.000000        1.243747
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0355     0.0013
+w              0.0000     0.0292     0.0009
+R              0.0000     0.0001     0.0000
+Infl           0.0000     0.0014     0.0000
+X              0.0000     0.0035     0.0000
+L              0.0000     0.0048     0.0000
+c              0.0000     0.0273     0.0007
+rk             0.0000     0.0182     0.0003
+A              0.0000     0.0229     0.0005
+Y              0.0000     0.0342     0.0012
+
+
+
+MATRIX OF CORRELATIONS
+
+Variables      k       w       R     Infl      X       L       c      rk       A       Y   
+k            1.0000  0.9214  0.4574  0.4574  0.2337  0.0715  0.9711 -0.4574  0.7014  0.8200
+w            0.9214  1.0000  0.0759  0.0759  0.5931  0.4535  0.9875 -0.0759  0.9232  0.9780
+R            0.4574  0.0759  1.0000  1.0000 -0.7578 -0.8543  0.2320 -1.0000 -0.3131 -0.1340
+Infl         0.4574  0.0759  1.0000  1.0000 -0.7578 -0.8543  0.2320 -1.0000 -0.3131 -0.1340
+X            0.2337  0.5931 -0.7578 -0.7578  1.0000  0.9865  0.4589  0.7578  0.8570  0.7482
+L            0.0715  0.4535 -0.8543 -0.8543  0.9865  1.0000  0.3074  0.8543  0.7611  0.6296
+c            0.9711  0.9875  0.2320  0.2320  0.4589  0.3074  1.0000 -0.2320  0.8512  0.9329
+rk          -0.4574 -0.0759 -1.0000 -1.0000  0.7578  0.8543 -0.2320  1.0000  0.3131  0.1340
+A            0.7014  0.9232 -0.3131 -0.3131  0.8570  0.7611  0.8512  0.3131  1.0000  0.9831
+Y            0.8200  0.9780 -0.1340 -0.1340  0.7482  0.6296  0.9329  0.1340  0.9831  1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+
+Order      1       2       3       4       5   
+k        0.9956  0.9838  0.9662  0.9437  0.9175
+w        0.9638  0.9260  0.8872  0.8480  0.8087
+R        0.8661  0.7483  0.6448  0.5540  0.4744
+Infl     0.8661  0.7483  0.6448  0.5540  0.4744
+X        0.8292  0.6812  0.5532  0.4429  0.3481
+L        0.8232  0.6703  0.5384  0.4249  0.3276
+c        0.9820  0.9592  0.9325  0.9029  0.8711
+rk       0.8661  0.7483  0.6448  0.5540  0.4744
+A        0.9000  0.8100  0.7290  0.6561  0.5905
+Y        0.9315  0.8674  0.8073  0.7510  0.6984
+Total computing time : 0h00m06s

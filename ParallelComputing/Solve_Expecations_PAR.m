@@ -1,5 +1,4 @@
-
-function [ E_K, E_S ] = Solve_Expecations_PAR( t, SteadyStateValuesNK, ParameterValuesLearning, ParameterValues, storeResults,j,h ) 
+function [ E_K, E_S ] = Solve_Expecations_PAR( t, SteadyStateValuesNK, ParameterValuesLearning, ParameterValues, storeResults,h ) 
     
     % PURPOSE: given the state variables and estimated parameters at time t, it calculates the infinite horizon forecast of variables.
     % INPUT:   t - time period in which households and firms do forecasts
@@ -81,5 +80,63 @@ function [ E_K, E_S ] = Solve_Expecations_PAR( t, SteadyStateValuesNK, Parameter
 end
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

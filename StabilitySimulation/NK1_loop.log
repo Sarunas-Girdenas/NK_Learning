@@ -1,0 +1,3976 @@
+Starting Dynare (version 4.4.3).
+Starting preprocessing of the model file ...
+Found 10 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+Processing outputs ...done
+Preprocessing completed.
+Starting MATLAB/Octave computing.
+ynare\4.4.3\matlab\dynare_config.m',188,1)">dynare_config at 188</a>
+  In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\dynare.m',48,1)">dynare at 48</a>] 
+[Warning: Function ilu has the same name as a MATLAB builtin. We
+suggest you rename the function to avoid a potential name
+conflict.] 
+[> In <a href="matlab: opentoline('C:\Program Files\MATLAB\R2014b\toolbox\matlab\general\path.m',109,1)">path at 109</a>
+  In <a href="matlab: opentoline('C:\Program Files\MATLAB\R2014b\toolbox\matlab\general\addpath.m',86,1)">addpath at 86</a>
+  In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\dynare_config.m',188,1)">dynare_config at 188</a>
+  In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\dynare.m',48,1)">dynare at 48</a>] 
+[Warning: Function ordeig has the same name as a MATLAB builtin.
+We suggest you rename the function to avoid a potential name
+conflict.] 
+[> In <a href="matlab: opentoline('C:\Program Files\MATLAB\R2014b\toolbox\matlab\general\path.m',109,1)">path at 109</a>
+  In <a href="matlab: opentoline('C:\Program Files\MATLAB\R2014b\toolbox\matlab\general\addpath.m',86,1)">addpath at 86</a>
+  In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\dynare_config.m',188,1)">dynare_config at 188</a>
+  In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\dynare.m',48,1)">dynare at 48</a>] 
+
+Configuring Dynare ...
+[mex] Generalized QZ.
+[mex] Sylvester equation solution.
+[mex] Kronecker products.
+[mex] Sparse kronecker products.
+[mex] Local state space iteration (second order).
+[mex] Bytecode evaluation.
+[mex] k-order perturbation solver.
+[mex] k-order solution simulation.
+[mex] Quasi Monte-Carlo sequence (Sobol).
+[mex] Markov Switching SBVAR.
+
+Starting Dynare (version 4.4.3).
+Starting preprocessing of the model file ...
+Found 10 equation(s).
+Evaluating expressions...done
+Computing static model derivatives:
+ - order 1
+Computing dynamic model derivatives:
+ - order 1
+Processing outputs ...done
+Preprocessing completed.
+Starting MATLAB/Octave computing.
+
+[Warning: Some of the parameters have no value (k_st, L_st, c_st,
+w_st, R_st, rk_st, X_st, beta, alpha, delta, theta, epsilon, eta,
+rho) when using stoch_simul. If these parameters are not
+initialized in a steadystate file, Dynare may not be able to
+solve the model...] 
+[> In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\test_for_deep_parameters_calibration.m',46,1)">test_for_deep_parameters_calibration at 46</a>
+  In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\stoch_simul.m',27,1)">stoch_simul at 27</a>
+  In <a href="matlab: opentoline('\\isad.isadroot.ex.ac.uk\UOE\User\My Documents\NK_Learning\StabilitySimulation\NK1_loop.m',159,1)">NK1_loop at 159</a>
+  In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\dynare.m',180,1)">dynare at 180</a>] 
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.920435        0.410505        0.008681        0.054258       -0.071103       -0.108057        0.518562       -0.617986               0        0.231345
+A(-1)                       0.165629        0.689295       -0.010595       -0.066219        0.189278        0.230560        0.458735        0.754226        0.900000        1.109133
+e_A                         0.184033        0.765883       -0.011772       -0.073577        0.210309        0.256178        0.509705        0.838029        1.000000        1.232370
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.920039        0.409437        0.007241        0.052984       -0.069642       -0.109643        0.519080       -0.620244               0        0.230152
+A(-1)                       0.166579        0.691926       -0.008870       -0.064901        0.185692        0.234403        0.457523        0.759751        0.900000        1.112021
+e_A                         0.185087        0.768807       -0.009855       -0.072113        0.206324        0.260448        0.508359        0.844167        1.000000        1.235579
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.919659        0.408413        0.005867        0.051770       -0.068241       -0.111164        0.519577       -0.622410               0        0.229007
+A(-1)                       0.167492        0.694459       -0.007212       -0.063636        0.182240        0.238100        0.456359        0.765067        0.900000        1.114799
+e_A                         0.186102        0.771621       -0.008013       -0.070706        0.202489        0.264556        0.507066        0.850075        1.000000        1.238666
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.919294        0.407430        0.004555        0.050611       -0.066897       -0.112624        0.520054       -0.624489               0        0.227909
+A(-1)                       0.168371        0.696899       -0.005618       -0.062419        0.178916        0.241659        0.455239        0.770187        0.900000        1.117474
+e_A                         0.187079        0.774332       -0.006242       -0.069354        0.198795        0.268510        0.505822        0.855764        1.000000        1.241638
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.918944        0.406485        0.003300        0.049504       -0.065605       -0.114027        0.520512       -0.626486               0        0.226853
+A(-1)                       0.169217        0.699251       -0.004083       -0.061248        0.175712        0.245089        0.454162        0.775122        0.900000        1.120051
+e_A                         0.188019        0.776945       -0.004537       -0.068054        0.195235        0.272321        0.504624        0.861247        1.000000        1.244501
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.918607        0.405577        0.002099        0.048444       -0.064363       -0.115376        0.520953       -0.628406               0        0.225838
+A(-1)                       0.170033        0.701519       -0.002605       -0.060122        0.172621        0.248395        0.453124        0.779881        0.900000        1.122536
+e_A                         0.188926        0.779466       -0.002895       -0.066802        0.191802        0.275995        0.503471        0.866535        1.000000        1.247262
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.918283        0.404703        0.000949        0.047430       -0.063167       -0.116674        0.521377       -0.630254               0        0.224862
+A(-1)                       0.170820        0.703709       -0.001181       -0.059036        0.169639        0.251586        0.452123        0.784474        0.900000        1.124933
+e_A                         0.189800        0.781899       -0.001312       -0.065595        0.188488        0.279540        0.502359        0.871638        1.000000        1.249926
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917971        0.403861       -0.000155        0.046458       -0.062016       -0.117924        0.521785       -0.632033               0        0.223922
+A(-1)                       0.171580        0.705823        0.000193       -0.057989        0.166758        0.254666        0.451158        0.788909        0.900000        1.127247
+e_A                         0.190644        0.784248        0.000215       -0.064432        0.185287        0.282962        0.501287        0.876566        1.000000        1.252497
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917670        0.403050       -0.001214        0.045525       -0.060907       -0.119128        0.522178       -0.633748               0        0.223015
+A(-1)                       0.172314        0.707867        0.001519       -0.056979        0.163975        0.257641        0.450226        0.793195        0.900000        1.129483
+e_A                         0.191459        0.786519        0.001688       -0.063310        0.182194        0.286268        0.500252        0.881327        1.000000        1.254981
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917380        0.402268       -0.002231        0.044629       -0.059837       -0.120289        0.522557       -0.635401               0        0.222142
+A(-1)                       0.173022        0.709844        0.002800       -0.056004        0.161283        0.260517        0.449327        0.797338        0.900000        1.131644
+e_A                         0.192247        0.788715        0.003111       -0.062226        0.179204        0.289463        0.499252        0.885931        1.000000        1.257382
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.922205        0.415278        0.015211        0.060043       -0.077631       -0.100968        0.516246       -0.607895               0        0.236679
+A(-1)                       0.161420        0.677658       -0.018261       -0.072082        0.205142        0.213541        0.464118        0.729779        0.900000        1.096341
+e_A                         0.179356        0.752953       -0.020290       -0.080091        0.227936        0.237267        0.515686        0.810865        1.000000        1.218157
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.921466        0.413286        0.012466        0.057609       -0.074906       -0.103927        0.517213       -0.612108               0        0.234453
+A(-1)                       0.163171        0.682492       -0.015069       -0.069640        0.198551        0.220615        0.461877        0.739937        0.900000        1.101659
+e_A                         0.181301        0.758325       -0.016744       -0.077377        0.220612        0.245128        0.513196        0.822152        1.000000        1.224065
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.920778        0.411431        0.009935        0.055368       -0.072369       -0.106682        0.518113       -0.616029               0        0.232380
+A(-1)                       0.164809        0.687023       -0.012087       -0.067360        0.192375        0.227240        0.459783        0.749454        0.900000        1.106638
+e_A                         0.183121        0.763359       -0.013430       -0.074844        0.213750        0.252489        0.510870        0.832727        1.000000        1.229597
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.920136        0.409700        0.007595        0.053297       -0.070002       -0.109253        0.518953       -0.619689               0        0.230446
+A(-1)                       0.166345        0.691278       -0.009295       -0.065226        0.186575        0.233456        0.457822        0.758389        0.900000        1.111309
+e_A                         0.184828        0.768087       -0.010327       -0.072473        0.207306        0.259396        0.508691        0.842655        1.000000        1.234788
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.919536        0.408081        0.005423        0.051378       -0.067787       -0.111658        0.519738       -0.623112               0        0.228636
+A(-1)                       0.167789        0.695282       -0.006674       -0.063225        0.181118        0.239301        0.455981        0.766795        0.900000        1.115702
+e_A                         0.186432        0.772536       -0.007415       -0.070250        0.201243        0.265890        0.506646        0.851995        1.000000        1.239669
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.918972        0.406562        0.003403        0.049594       -0.065710       -0.113912        0.520475       -0.626322               0        0.226940
+A(-1)                       0.169148        0.699058       -0.004209       -0.061344        0.175974        0.244808        0.454250        0.774718        0.900000        1.119840
+e_A                         0.187942        0.776731       -0.004677       -0.068160        0.195527        0.272009        0.504722        0.860798        1.000000        1.244267
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.918443        0.405136        0.001518        0.047932       -0.063759       -0.116031        0.521167       -0.629339               0        0.225345
+A(-1)                       0.170430        0.702623       -0.001886       -0.059574        0.171117        0.250005        0.452619        0.782198        0.900000        1.123745
+e_A                         0.189367        0.780693       -0.002096       -0.066193        0.190130        0.277783        0.502910        0.869109        1.000000        1.248606
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917945        0.403793       -0.000245        0.046378       -0.061922       -0.118026        0.521818       -0.632178               0        0.223845
+A(-1)                       0.171642        0.705996        0.000306       -0.057903        0.166523        0.254917        0.451079        0.789272        0.900000        1.127437
+e_A                         0.190713        0.784441        0.000340       -0.064337        0.185025        0.283242        0.501199        0.876969        1.000000        1.252707
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917476        0.402526       -0.001897        0.044924       -0.060189       -0.119907        0.522432       -0.634857               0        0.222429
+A(-1)                       0.172789        0.709192        0.002378       -0.056325        0.162170        0.259569        0.449623        0.795972        0.900000        1.130932
+e_A                         0.191988        0.787991        0.002642       -0.062583        0.180189        0.288410        0.499581        0.884414        1.000000        1.256591
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917032        0.401328       -0.003448        0.043559       -0.058552       -0.121684        0.523012       -0.637388               0        0.221092
+A(-1)                       0.173876        0.712224        0.004341       -0.054831        0.158041        0.263980        0.448244        0.802328        0.900000        1.134246
+e_A                         0.193195        0.791360        0.004823       -0.060923        0.175602        0.293311        0.498049        0.891476        1.000000        1.260273
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.924344        0.421044        0.023312        0.067245       -0.085517       -0.092406        0.513450       -0.595705               0        0.243122
+A(-1)                       0.156410        0.663868       -0.027423       -0.079105        0.223953        0.193318        0.470550        0.700775        0.900000        1.081138
+e_A                         0.173789        0.737631       -0.030470       -0.087895        0.248837        0.214798        0.522833        0.778639        1.000000        1.201265
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.923133        0.417780        0.018696        0.063138       -0.081052       -0.097253        0.515033       -0.602607               0        0.239474
+A(-1)                       0.159237        0.671640       -0.022249       -0.075137        0.213350        0.204722        0.466917        0.717125        0.900000        1.089712
+e_A                         0.176930        0.746266       -0.024721       -0.083485        0.237056        0.227469        0.518797        0.796806        1.000000        1.210791
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.922045        0.414847        0.014614        0.059513       -0.077041       -0.101609        0.516456       -0.608808               0        0.236197
+A(-1)                       0.161799        0.678703       -0.017570       -0.071553        0.203718        0.215070        0.463633        0.731974        0.900000        1.097490
+e_A                         0.179776        0.754114       -0.019523       -0.079504        0.226353        0.238966        0.515148        0.813304        1.000000        1.219434
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.921062        0.412196        0.010976        0.056289       -0.073416       -0.105546        0.517742       -0.614412               0        0.233235
+A(-1)                       0.164132        0.685150       -0.013319       -0.068301        0.194927        0.224503        0.460647        0.745521        0.900000        1.104580
+e_A                         0.182369        0.761278       -0.014799       -0.075890        0.216586        0.249447        0.511831        0.828357        1.000000        1.227312
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.920169        0.409788        0.007714        0.053402       -0.070122       -0.109122        0.518910       -0.619502               0        0.230544
+A(-1)                       0.166266        0.691060       -0.009437       -0.065335        0.186872        0.233139        0.457922        0.757933        0.900000        1.111071
+e_A                         0.184740        0.767845       -0.010486       -0.072594        0.207635        0.259043        0.508802        0.842147        1.000000        1.234523
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.919354        0.407591        0.004770        0.050801       -0.067117       -0.112385        0.519976       -0.624148               0        0.228089
+A(-1)                       0.168227        0.696498       -0.005879       -0.062619        0.179461        0.241075        0.455423        0.769347        0.900000        1.117035
+e_A                         0.186918        0.773887       -0.006532       -0.069576        0.199402        0.267862        0.506026        0.854830        1.000000        1.241150
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.918607        0.405577        0.002099        0.048444       -0.064363       -0.115376        0.520953       -0.628406               0        0.225838
+A(-1)                       0.170033        0.701519       -0.002605       -0.060122        0.172621        0.248395        0.453124        0.779881        0.900000        1.122536
+e_A                         0.188926        0.779466       -0.002895       -0.066802        0.191802        0.275995        0.503471        0.866535        1.000000        1.247262
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917920        0.403724       -0.000334        0.046299       -0.061828       -0.118127        0.521851       -0.632323               0        0.223768
+A(-1)                       0.171704        0.706169        0.000418       -0.057818        0.166288        0.255169        0.451000        0.789634        0.900000        1.127625
+e_A                         0.190782        0.784632        0.000464       -0.064242        0.184764        0.283521        0.501112        0.877371        1.000000        1.252917
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917286        0.402013       -0.002562        0.044339       -0.059489       -0.120667        0.522680       -0.635940               0        0.221857
+A(-1)                       0.173254        0.710488        0.003217       -0.055686        0.160406        0.261454        0.449034        0.798689        0.900000        1.132348
+e_A                         0.192504        0.789431        0.003575       -0.061873        0.178229        0.290505        0.498926        0.887432        1.000000        1.258165
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.916699        0.400429       -0.004608        0.042539       -0.057322       -0.123019        0.523448       -0.639289               0        0.220088
+A(-1)                       0.174695        0.714511        0.005818       -0.053707        0.154928        0.267304        0.447206        0.807120        0.900000        1.136743
+e_A                         0.194105        0.793901        0.006465       -0.059674        0.172143        0.297005        0.496896        0.896800        1.000000        1.263048
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.926981        0.428162        0.033647        0.076471       -0.095251       -0.081841        0.510003       -0.580660               0        0.251070
+A(-1)                       0.150341        0.647252       -0.038580       -0.087681        0.246633        0.168872        0.478380        0.665782        0.900000        1.062757
+e_A                         0.167046        0.719169       -0.042866       -0.097423        0.274037        0.187635        0.531533        0.739758        1.000000        1.180841
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.925106        0.423102        0.026261        0.069873       -0.088331       -0.089351        0.512452       -0.591355               0        0.245420
+A(-1)                       0.154643        0.659017       -0.030666       -0.081596        0.230572        0.186191        0.472826        0.690566        0.900000        1.075780
+e_A                         0.171825        0.732242       -0.034074       -0.090662        0.256191        0.206879        0.525362        0.767296        1.000000        1.195311
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.923491        0.418746        0.020055        0.064346       -0.082374       -0.095818        0.514564       -0.600563               0        0.240554
+A(-1)                       0.158397        0.669329       -0.023785       -0.076314        0.216503        0.201333        0.467996        0.712265        0.900000        1.087164
+e_A                         0.175997        0.743698       -0.026427       -0.084793        0.240558        0.223703        0.519995        0.791405        1.000000        1.207960
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.922085        0.414954        0.014762        0.059645       -0.077187       -0.101450        0.516404       -0.608581               0        0.236317
+A(-1)                       0.161704        0.678443       -0.017742       -0.071685        0.204072        0.214690        0.463753        0.731428        0.900000        1.097204
+e_A                         0.179672        0.753825       -0.019713       -0.079650        0.226747        0.238544        0.515281        0.812698        1.000000        1.219116
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.920848        0.411620        0.010192        0.055595       -0.072628       -0.106401        0.518021       -0.615629               0        0.232591
+A(-1)                       0.164641        0.686559       -0.012392       -0.067592        0.193007        0.226563        0.459997        0.748481        0.900000        1.106128
+e_A                         0.182935        0.762844       -0.013769       -0.075103        0.214452        0.251736        0.511107        0.831645        1.000000        1.229032
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.919752        0.408665        0.006205        0.052068       -0.068586       -0.110790        0.519455       -0.621877               0        0.229289
+A(-1)                       0.167267        0.693835       -0.007620       -0.063947        0.183091        0.237189        0.456646        0.763757        0.900000        1.114115
+e_A                         0.185852        0.770928       -0.008467       -0.071053        0.203434        0.263543        0.507384        0.848619        1.000000        1.237905
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.918774        0.406027        0.002693        0.048968       -0.064978       -0.114708        0.520735       -0.627455               0        0.226341
+A(-1)                       0.169629        0.700395       -0.003337       -0.060680        0.174153        0.246757        0.453638        0.777523        0.900000        1.121305
+e_A                         0.188477        0.778217       -0.003708       -0.067422        0.193503        0.274175        0.504042        0.863914        1.000000        1.245894
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917895        0.403656       -0.000424        0.046221       -0.061735       -0.118229        0.521884       -0.632468               0        0.223692
+A(-1)                       0.171766        0.706341        0.000529       -0.057733        0.166053        0.255419        0.450922        0.789994        0.900000        1.127813
+e_A                         0.190851        0.784823        0.000588       -0.064148        0.184504        0.283799        0.501024        0.877771        1.000000        1.253126
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917100        0.401513       -0.003210        0.043769       -0.058805       -0.121410        0.522923       -0.636997               0        0.221298
+A(-1)                       0.173708        0.711756        0.004038       -0.055061        0.158679        0.263299        0.448457        0.801347        0.900000        1.133734
+e_A                         0.193009        0.790840        0.004486       -0.061179        0.176310        0.292554        0.498286        0.890385        1.000000        1.259704
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.916379        0.399567       -0.005715        0.041567       -0.056143       -0.124299        0.523866       -0.641111               0        0.219125
+A(-1)                       0.175482        0.716708        0.007236       -0.052628        0.151936        0.270498        0.446210        0.811725        0.900000        1.139143
+e_A                         0.194979        0.796343        0.008040       -0.058476        0.168818        0.300553        0.495789        0.901916        1.000000        1.265714
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.930322        0.437197        0.047332        0.088748       -0.107604       -0.068447        0.505644       -0.561572               0        0.261147
+A(-1)                       0.142827        0.626820       -0.052483       -0.098405        0.274546        0.138685        0.488135        0.622678        0.900000        1.040052
+e_A                         0.158697        0.696467       -0.058314       -0.109339        0.305052        0.154095        0.542372        0.691865        1.000000        1.155614
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.927482        0.429515        0.035656        0.078268       -0.097101       -0.079834        0.509349       -0.577801               0        0.252581
+A(-1)                       0.149202        0.644145       -0.040681       -0.089299        0.250876        0.164290        0.479854        0.659233        0.900000        1.059311
+e_A                         0.165781        0.715716       -0.045201       -0.099221        0.278752        0.182545        0.533171        0.732481        1.000000        1.177013
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.925159        0.423244        0.026466        0.070056       -0.088525       -0.089140        0.512383       -0.591055               0        0.245579
+A(-1)                       0.154521        0.658684       -0.030890       -0.081767        0.231027        0.185701        0.472983        0.689863        0.900000        1.075411
+e_A                         0.171690        0.731871       -0.034322       -0.090853        0.256697        0.206334        0.525537        0.766515        1.000000        1.194901
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.923222        0.418018        0.019031        0.063436       -0.081378       -0.096899        0.514917       -0.602102               0        0.239741
+A(-1)                       0.159029        0.671068       -0.022628       -0.075428        0.214129        0.203884        0.467184        0.715924        0.900000        1.089082
+e_A                         0.176699        0.745631       -0.025143       -0.083809        0.237922        0.226538        0.519093        0.795471        1.000000        1.210091
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.921579        0.413591        0.012884        0.057980       -0.075323       -0.103474        0.517065       -0.611463               0        0.234793
+A(-1)                       0.162902        0.681750       -0.015559       -0.070014        0.199563        0.219529        0.462220        0.738377        0.900000        1.100842
+e_A                         0.181002        0.757500       -0.017287       -0.077793        0.221737        0.243922        0.513578        0.820419        1.000000        1.223158
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.920169        0.409788        0.007714        0.053402       -0.070122       -0.109122        0.518910       -0.619502               0        0.230544
+A(-1)                       0.166266        0.691060       -0.009437       -0.065335        0.186872        0.233139        0.457922        0.757933        0.900000        1.111071
+e_A                         0.184740        0.767845       -0.010486       -0.072594        0.207635        0.259043        0.508802        0.842147        1.000000        1.234523
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.918944        0.406485        0.003300        0.049504       -0.065605       -0.114027        0.520512       -0.626486               0        0.226853
+A(-1)                       0.169217        0.699251       -0.004083       -0.061248        0.175712        0.245089        0.454162        0.775122        0.900000        1.120051
+e_A                         0.188019        0.776945       -0.004537       -0.068054        0.195235        0.272321        0.504624        0.861247        1.000000        1.244501
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917869        0.403588       -0.000513        0.046142       -0.061642       -0.118330        0.521917       -0.632612               0        0.223616
+A(-1)                       0.171827        0.706512        0.000641       -0.057648        0.165820        0.255669        0.450844        0.790354        0.900000        1.128001
+e_A                         0.190919        0.785014        0.000712       -0.064053        0.184244        0.284076        0.500937        0.878171        1.000000        1.253334
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.916919        0.401024       -0.003841        0.043214       -0.058136       -0.122135        0.523160       -0.638030               0        0.220753
+A(-1)                       0.174153        0.712997        0.004840       -0.054451        0.156990        0.265103        0.447894        0.803947        0.900000        1.135089
+e_A                         0.193503        0.792218        0.005378       -0.060501        0.174433        0.294559        0.497660        0.893274        1.000000        1.261210
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.916073        0.398740       -0.006773        0.040638       -0.055012       -0.125526        0.524266       -0.642859               0        0.218201
+A(-1)                       0.176238        0.718822        0.008599       -0.051593        0.149058        0.273569        0.445253        0.816154        0.900000        1.141450
+e_A                         0.195820        0.798691        0.009554       -0.057325        0.165620        0.303966        0.494726        0.906838        1.000000        1.268278
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.934707        0.449108        0.066408        0.105970       -0.123878       -0.050839        0.499947       -0.536437               0        0.274391
+A(-1)                       0.133259        0.601041       -0.070336       -0.112238        0.309808        0.100383        0.500657        0.568165        0.900000        1.011232
+e_A                         0.148066        0.667823       -0.078151       -0.124709        0.344231        0.111537        0.556286        0.631294        1.000000        1.123592
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.930401        0.437412        0.047665        0.089048       -0.107897       -0.068129        0.505541       -0.561119               0        0.261386
+A(-1)                       0.142652        0.626345       -0.052809       -0.098658        0.275197        0.137981        0.488364        0.621673        0.900000        1.039522
+e_A                         0.158502        0.695938       -0.058677       -0.109620        0.305774        0.153312        0.542627        0.690748        1.000000        1.155024
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.927104        0.428495        0.034140        0.076912       -0.095706       -0.081347        0.509842       -0.579956               0        0.251442
+A(-1)                       0.150061        0.646485       -0.039098       -0.088080        0.247680        0.167742        0.478743        0.664166        0.900000        1.061907
+e_A                         0.166734        0.718317       -0.043442       -0.097867        0.275200        0.186380        0.531937        0.737962        1.000000        1.179897
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.924492        0.421445        0.023883        0.067754       -0.086065       -0.091811        0.513255       -0.594858               0        0.243569
+A(-1)                       0.156065        0.662920       -0.028056       -0.079591        0.225246        0.191926        0.470994        0.698781        0.900000        1.080092
+e_A                         0.173406        0.736578       -0.031173       -0.088434        0.250273        0.213252        0.523326        0.776424        1.000000        1.200102
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.922368        0.415717        0.015819        0.060583       -0.078231       -0.100317        0.516033       -0.606968               0        0.237169
+A(-1)                       0.161036        0.676599       -0.018961       -0.072618        0.206587        0.211989        0.464610        0.727552        0.900000        1.095175
+e_A                         0.178929        0.751777       -0.021068       -0.080687        0.229541        0.235544        0.516233        0.808391        1.000000        1.216861
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.920605        0.410964        0.009302        0.054807       -0.071730       -0.107376        0.518340       -0.617017               0        0.231858
+A(-1)                       0.165222        0.688168       -0.011335       -0.066784        0.190814        0.228914        0.459254        0.751860        0.900000        1.107896
+e_A                         0.183580        0.764631       -0.012594       -0.074205        0.212015        0.254349        0.510283        0.835400        1.000000        1.230995
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.919117        0.406953        0.003921        0.050051       -0.066244       -0.113333        0.520286       -0.625497               0        0.227376
+A(-1)                       0.168798        0.698085       -0.004843       -0.061828        0.177299        0.243390        0.454695        0.772677        0.900000        1.118775
+e_A                         0.187553        0.775650       -0.005381       -0.068698        0.196999        0.270433        0.505217        0.858530        1.000000        1.243083
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917844        0.403520       -0.000601        0.046064       -0.061549       -0.118431        0.521950       -0.632755               0        0.223540
+A(-1)                       0.171889        0.706683        0.000752       -0.057564        0.165587        0.255918        0.450766        0.790713        0.900000        1.128188
+e_A                         0.190987        0.785204        0.000835       -0.063959        0.183985        0.284353        0.500851        0.878570        1.000000        1.253542
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.916742        0.400547       -0.004457        0.042672       -0.057483       -0.122845        0.523391       -0.639040               0        0.220219
+A(-1)                       0.174588        0.714211        0.005625       -0.053854        0.155336        0.266869        0.447342        0.806492        0.900000        1.136416
+e_A                         0.193986        0.793568        0.006250       -0.059838        0.172596        0.296521        0.497047        0.896102        1.000000        1.262684
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.915779        0.397946       -0.007784        0.039750       -0.053926       -0.126705        0.524650       -0.644537               0        0.217315
+A(-1)                       0.176965        0.720857        0.009909       -0.050597        0.146288        0.276525        0.444333        0.820417        0.900000        1.143670
+e_A                         0.196628        0.800953        0.011010       -0.056219        0.162542        0.307250        0.493703        0.911574        1.000000        1.270745
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.940750        0.465694        0.095112        0.132099       -0.146510       -0.026474        0.492167       -0.501530               0        0.292710
+A(-1)                       0.120609        0.567390       -0.094209       -0.130846        0.355914        0.049991        0.517398        0.496772        0.900000        0.973295
+e_A                         0.134010        0.630433       -0.104677       -0.145385        0.395460        0.055546        0.574887        0.551969        1.000000        1.081439
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.934085        0.447413        0.063618        0.103444       -0.121563       -0.053340        0.500753       -0.540012               0        0.272510
+A(-1)                       0.134597        0.604629       -0.067829       -0.110292        0.304898        0.105729        0.498900        0.575761        0.900000        1.015255
+e_A                         0.149552        0.671810       -0.075366       -0.122546        0.338775        0.117477        0.554333        0.639734        1.000000        1.128062
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.929406        0.434716        0.043509        0.085311       -0.104211       -0.072123        0.506839       -0.566813               0        0.258381
+A(-1)                       0.144870        0.632357       -0.048694       -0.095479        0.266979        0.146880        0.485477        0.634368        0.900000        1.046217
+e_A                         0.160966        0.702619       -0.054105       -0.106088        0.296643        0.163201        0.539419        0.704854        1.000000        1.162463
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.925923        0.425304        0.029452        0.072721       -0.091343       -0.086081        0.511386       -0.586700               0        0.247880
+A(-1)                       0.152762        0.653868       -0.034122       -0.084251        0.237600        0.178616        0.475251        0.679722        0.900000        1.070085
+e_A                         0.169736        0.726520       -0.037913       -0.093612        0.264000        0.198463        0.528057        0.755247        1.000000        1.188983
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.923222        0.418018        0.019031        0.063436       -0.081378       -0.096899        0.514917       -0.602102               0        0.239741
+A(-1)                       0.159029        0.671068       -0.022628       -0.075428        0.214129        0.203884        0.467184        0.715924        0.900000        1.089082
+e_A                         0.176699        0.745631       -0.025143       -0.083809        0.237922        0.226538        0.519093        0.795471        1.000000        1.210091
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.921062        0.412196        0.010976        0.056289       -0.073416       -0.105546        0.517742       -0.614412               0        0.233235
+A(-1)                       0.164132        0.685150       -0.013319       -0.068301        0.194927        0.224503        0.460647        0.745521        0.900000        1.104580
+e_A                         0.182369        0.761278       -0.014799       -0.075890        0.216586        0.249447        0.511831        0.828357        1.000000        1.227312
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.919294        0.407430        0.004555        0.050611       -0.066897       -0.112624        0.520054       -0.624489               0        0.227909
+A(-1)                       0.168371        0.696899       -0.005618       -0.062419        0.178916        0.241659        0.455239        0.770187        0.900000        1.117474
+e_A                         0.187079        0.774332       -0.006242       -0.069354        0.198795        0.268510        0.505822        0.855764        1.000000        1.241638
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917819        0.403452       -0.000690        0.045986       -0.061456       -0.118531        0.521983       -0.632898               0        0.223464
+A(-1)                       0.171950        0.706854        0.000862       -0.057479        0.165355        0.256166        0.450688        0.791070        0.900000        1.128375
+e_A                         0.191055        0.785393        0.000958       -0.063866        0.183727        0.284629        0.500764        0.878967        1.000000        1.253750
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.916569        0.400080       -0.005057        0.042145       -0.056844       -0.123538        0.523617       -0.640027               0        0.219698
+A(-1)                       0.175013        0.715400        0.006392       -0.053270        0.153717        0.268597        0.446803        0.808984        0.900000        1.137714
+e_A                         0.194459        0.794889        0.007103       -0.059189        0.170797        0.298441        0.496448        0.898871        1.000000        1.264127
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.915496        0.397183       -0.008753        0.038901       -0.052883       -0.127837        0.525019       -0.646150               0        0.216463
+A(-1)                       0.177666        0.722818        0.011169       -0.049640        0.143619        0.279371        0.443447        0.824523        0.900000        1.145808
+e_A                         0.197406        0.803131        0.012410       -0.055155        0.159577        0.310412        0.492719        0.916137        1.000000        1.273120
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.949720        0.490947        0.144190        0.177283       -0.180858        0.010058        0.480889       -0.448716               0        0.320146
+A(-1)                       0.102954        0.521329       -0.128072       -0.157466        0.419186       -0.019817        0.541146        0.398558        0.900000        0.920698
+e_A                         0.114394        0.579254       -0.142302       -0.174962        0.465762       -0.022019        0.601273        0.442842        1.000000        1.022997
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.938896        0.460578        0.085978        0.123759       -0.139534       -0.033965        0.494543       -0.512282               0        0.287079
+A(-1)                       0.124425        0.577486       -0.086975       -0.125194        0.342071        0.065161        0.512326        0.518222        0.900000        0.984718
+e_A                         0.138250        0.641651       -0.096639       -0.139104        0.380079        0.072401        0.569251        0.575802        1.000000        1.094131
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.932174        0.442219        0.055226        0.095860       -0.114467       -0.061015        0.503234       -0.550970               0        0.266737
+A(-1)                       0.138746        0.615790       -0.060078       -0.104281        0.289628        0.122328        0.493463        0.599372        0.900000        1.027746
+e_A                         0.154162        0.684211       -0.066753       -0.115868        0.321808        0.135920        0.548292        0.665969        1.000000        1.141940
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.927546        0.429688        0.035913        0.078499       -0.097337       -0.079577        0.509265       -0.577435               0        0.252774
+A(-1)                       0.149057        0.643749       -0.040949       -0.089506        0.251417        0.163706        0.480042        0.658398        0.900000        1.058872
+e_A                         0.165619        0.715276       -0.045499       -0.099451        0.279353        0.181896        0.533380        0.731553        1.000000        1.176524
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.924149        0.420518        0.022562        0.066578       -0.084797       -0.093187        0.513705       -0.596817               0        0.242534
+A(-1)                       0.156864        0.665114       -0.026592       -0.078467        0.222253        0.195148        0.469966        0.703397        0.900000        1.082514
+e_A                         0.174293        0.739015       -0.029546       -0.087186        0.246947        0.216831        0.522185        0.781553        1.000000        1.202793
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.921541        0.413489        0.012744        0.057856       -0.075183       -0.103626        0.517115       -0.611679               0        0.234679
+A(-1)                       0.162992        0.681998       -0.015395       -0.069889        0.199225        0.219893        0.462105        0.738899        0.900000        1.101115
+e_A                         0.181102        0.757776       -0.017105       -0.077654        0.221361        0.244325        0.513450        0.820999        1.000000        1.223462
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.919475        0.407916        0.005204        0.051184       -0.067562       -0.111902        0.519818       -0.623460               0        0.228452
+A(-1)                       0.167935        0.695690       -0.006407       -0.063021        0.180563        0.239896        0.455794        0.767651        0.900000        1.116149
+e_A                         0.186595        0.772989       -0.007119       -0.070024        0.200625        0.266552        0.506438        0.852946        1.000000        1.240166
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917794        0.403385       -0.000778        0.045909       -0.061364       -0.118631        0.522016       -0.633041               0        0.223389
+A(-1)                       0.172011        0.707024        0.000973       -0.057395        0.165123        0.256414        0.450611        0.791427        0.900000        1.128561
+e_A                         0.191123        0.785582        0.001081       -0.063772        0.183470        0.284904        0.500678        0.879363        1.000000        1.253956
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.916400        0.399623       -0.005643        0.041630       -0.056220       -0.124215        0.523838       -0.640992               0        0.219188
+A(-1)                       0.175430        0.716564        0.007144       -0.052699        0.152132        0.270289        0.446275        0.811423        0.900000        1.138986
+e_A                         0.194922        0.796183        0.007937       -0.058554        0.169036        0.300321        0.495861        0.901582        1.000000        1.265540
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.915224        0.396449       -0.009681        0.038087       -0.051880       -0.128925        0.525374       -0.647700               0        0.215644
+A(-1)                       0.178341        0.724708        0.012382       -0.048718        0.141047        0.282113        0.442595        0.828481        0.900000        1.147868
+e_A                         0.198156        0.805231        0.013758       -0.054131        0.156719        0.313459        0.491772        0.920534        1.000000        1.275409
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.964879        0.537225        0.253468        0.279560       -0.243188        0.073860        0.463364       -0.353794               0        0.367897
+A(-1)                       0.076054        0.453502       -0.180982       -0.199612        0.512790       -0.124831        0.578332        0.252617        0.900000        0.841461
+e_A                         0.084505        0.503891       -0.201091       -0.221791        0.569767       -0.138701        0.642591        0.280685        1.000000        0.934957
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.945494        0.478927        0.119974        0.154916       -0.164530       -0.007224        0.486151       -0.473791               0        0.307173
+A(-1)                       0.111107        0.542462       -0.112353       -0.145075        0.390131        0.012341        0.530120        0.443696        0.900000        0.944934
+e_A                         0.123452        0.602735       -0.124836       -0.161195        0.433479        0.013712        0.589023        0.492995        1.000000        1.049927
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.935576        0.451480        0.070354        0.109547       -0.127116       -0.047343        0.498822       -0.531439               0        0.277020
+A(-1)                       0.131402        0.596068       -0.073821       -0.114947        0.316615        0.092967        0.503102        0.557633        0.900000        1.005650
+e_A                         0.146002        0.662298       -0.082024       -0.127719        0.351795        0.103296        0.559002        0.619592        1.000000        1.117389
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.929406        0.434716        0.043509        0.085311       -0.104211       -0.072123        0.506839       -0.566813               0        0.258381
+A(-1)                       0.144870        0.632357       -0.048694       -0.095479        0.266979        0.146880        0.485477        0.634368        0.900000        1.046217
+e_A                         0.160966        0.702619       -0.054105       -0.106088        0.296643        0.163201        0.539419        0.704854        1.000000        1.162463
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.925159        0.423244        0.026466        0.070056       -0.088525       -0.089140        0.512383       -0.591055               0        0.245579
+A(-1)                       0.154521        0.658684       -0.030890       -0.081767        0.231027        0.185701        0.472983        0.689863        0.900000        1.075411
+e_A                         0.171690        0.731871       -0.034322       -0.090853        0.256697        0.206334        0.525537        0.766515        1.000000        1.194901
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.922045        0.414847        0.014614        0.059513       -0.077041       -0.101609        0.516456       -0.608808               0        0.236197
+A(-1)                       0.161799        0.678703       -0.017570       -0.071553        0.203718        0.215070        0.463633        0.731974        0.900000        1.097490
+e_A                         0.179776        0.754114       -0.019523       -0.079504        0.226353        0.238966        0.515148        0.813304        1.000000        1.219434
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.919659        0.408413        0.005867        0.051770       -0.068241       -0.111164        0.519577       -0.622410               0        0.229007
+A(-1)                       0.167492        0.694459       -0.007212       -0.063636        0.182240        0.238100        0.456359        0.765067        0.900000        1.114799
+e_A                         0.186102        0.771621       -0.008013       -0.070706        0.202489        0.264556        0.507066        0.850075        1.000000        1.238666
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917769        0.403317       -0.000866        0.045832       -0.061272       -0.118731        0.522049       -0.633183               0        0.223314
+A(-1)                       0.172072        0.707194        0.001083       -0.057311        0.164892        0.256660        0.450533        0.791782        0.900000        1.128746
+e_A                         0.191191        0.785771        0.001203       -0.063679        0.183213        0.285178        0.500592        0.879758        1.000000        1.254162
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.916235        0.399177       -0.006215        0.041128       -0.055609       -0.124878        0.524054       -0.641936               0        0.218689
+A(-1)                       0.175838        0.717705        0.007879       -0.052140        0.150579        0.271946        0.445759        0.813813        0.900000        1.140230
+e_A                         0.195376        0.797450        0.008754       -0.057933        0.167310        0.302162        0.495288        0.904237        1.000000        1.266923
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.914963        0.395743       -0.010570        0.037308       -0.050914       -0.129973        0.525716       -0.649193               0        0.214856
+A(-1)                       0.178991        0.726531        0.013552       -0.047830        0.138566        0.284758        0.441773        0.832298        0.900000        1.149855
+e_A                         0.198879        0.807257        0.015058       -0.053145        0.153962        0.316398        0.490859        0.924776        1.000000        1.277617
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       1.000000        0.729487        0.936783        0.936783       -0.488757        0.270513        0.458975               0               0        0.511243
+A(-1)                       0.026430        0.338928       -0.282532       -0.282532        0.672918       -0.312498        0.651426               0        0.900000        0.699348
+e_A                         0.029366        0.376586       -0.313924       -0.313924        0.747687       -0.347220        0.723806               0        1.000000        0.777053
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k                 NaN        NaN        NaN
+w                 NaN        NaN        NaN
+R                 NaN        NaN        NaN
+Infl              NaN        NaN        NaN
+X                 NaN        NaN        NaN
+L                 NaN        NaN        NaN
+c                 NaN        NaN        NaN
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y                 NaN        NaN        NaN
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.955242        0.507106        0.179368        0.209992       -0.202733        0.032897        0.474209       -0.415238               0        0.337271
+A(-1)                       0.092738        0.495207       -0.147974       -0.173238        0.455166       -0.059907        0.555114        0.342562        0.900000        0.890466
+e_A                         0.103042        0.550230       -0.164416       -0.192487        0.505740       -0.066564        0.616793        0.380624        1.000000        0.989406
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.939871        0.463264        0.090742        0.128106       -0.143198       -0.030028        0.493292       -0.506635               0        0.290038
+A(-1)                       0.122411        0.572153       -0.090788       -0.128172        0.349383        0.057153        0.515000        0.506894        0.900000        0.978688
+e_A                         0.136013        0.635725       -0.100876       -0.142413        0.388203        0.063503        0.572222        0.563216        1.000000        1.087432
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.931559        0.440549        0.052578        0.093472       -0.112185       -0.063485        0.504034       -0.554494               0        0.264880
+A(-1)                       0.140095        0.619432       -0.057563       -0.102335        0.284648        0.127733        0.491699        0.607069        0.900000        1.031813
+e_A                         0.155661        0.688258       -0.063959       -0.113705        0.316275        0.141926        0.546332        0.674522        1.000000        1.146458
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.926265        0.426229        0.030803        0.073928       -0.092608       -0.084708        0.510938       -0.584744               0        0.248913
+A(-1)                       0.151976        0.651718       -0.035568       -0.085364        0.240536        0.175451        0.476266        0.675193        0.900000        1.067705
+e_A                         0.168862        0.724131       -0.039520       -0.094849        0.267262        0.194946        0.529185        0.750214        1.000000        1.186338
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.922575        0.416275        0.016594        0.061271       -0.078994       -0.099488        0.515763       -0.605788               0        0.237793
+A(-1)                       0.160548        0.675253       -0.019852       -0.073301        0.208421        0.210019        0.465235        0.724724        0.900000        1.093693
+e_A                         0.178387        0.750282       -0.022058       -0.081445        0.231579        0.233354        0.516928        0.805249        1.000000        1.215215
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.919847        0.408920        0.006546        0.052370       -0.068935       -0.110412        0.519331       -0.621338               0        0.229574
+A(-1)                       0.167040        0.693205       -0.008033       -0.064262        0.183950        0.236269        0.456936        0.762434        0.900000        1.113423
+e_A                         0.185600        0.770227       -0.008925       -0.071403        0.204388        0.262521        0.507706        0.847149        1.000000        1.237137
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.917744        0.403250       -0.000953        0.045755       -0.061180       -0.118831        0.522081       -0.633325               0        0.223239
+A(-1)                       0.172132        0.707363        0.001192       -0.057228        0.164662        0.256907        0.450456        0.792137        0.900000        1.128931
+e_A                         0.191258        0.785959        0.001325       -0.063587        0.182957        0.285452        0.500507        0.880152        1.000000        1.254368
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.916073        0.398740       -0.006773        0.040638       -0.055012       -0.125526        0.524266       -0.642859               0        0.218201
+A(-1)                       0.176238        0.718822        0.008599       -0.051593        0.149058        0.273569        0.445253        0.816154        0.900000        1.141450
+e_A                         0.195820        0.798691        0.009554       -0.057325        0.165620        0.303966        0.494726        0.906838        1.000000        1.268278
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000000
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.914711        0.395063       -0.011425        0.036559       -0.049984       -0.130982        0.526045       -0.650630               0        0.214097
+A(-1)                       0.179619        0.728291        0.014679       -0.046974        0.136170        0.287311        0.440981        0.835983        0.900000        1.151773
+e_A                         0.199577        0.809213        0.016311       -0.052194        0.151300        0.319234        0.489978        0.928870        1.000000        1.279747
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0000     0.0000
+w              0.0000     0.0000     0.0000
+R              0.0000     0.0000     0.0000
+Infl           0.0000     0.0000     0.0000
+X              0.0000     0.0000     0.0000
+L              0.0000     0.0000     0.0000
+c              0.0000     0.0000     0.0000
+rk             0.0000     0.0000     0.0000
+A              0.0000     0.0000     0.0000
+Y              0.0000     0.0000     0.0000
+
+All endogenous are constant or non stationary, not displaying correlations and auto-correlations
+
+
+
+
+
+Residuals of the static equations:
+
+Equation number 1 : 0
+Equation number 2 : 0
+Equation number 3 : 0
+Equation number 4 : 0
+Equation number 5 : 0
+Equation number 6 : 0
+Equation number 7 : 0
+Equation number 8 : 0
+Equation number 9 : 0
+Equation number 10 : 0
+
+
+
+STEADY-STATE RESULTS:
+
+k    		 0
+w    		 0
+R    		 0
+Infl 		 0
+X    		 0
+L    		 0
+c    		 0
+rk   		 0
+A    		 0
+Y    		 0
+
+EIGENVALUES:
+         Modulus             Real        Imaginary
+
+             0.9              0.9                0
+          0.9147           0.9147                0
+           1.193            1.193                0
+           2.379            2.379                0
+
+
+There are 2 eigenvalue(s) larger than 1 in modulus 
+for 2 forward-looking variable(s)
+
+The rank condition is verified.
+
+
+MODEL SUMMARY
+
+  Number of variables:         10
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  6
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+
+Variables      e_A   
+e_A          0.000100
+
+POLICY AND TRANSITION FUNCTIONS
+                                    k               w               R               Infl            X               L               c               rk              A               Y   
+k(-1)                       0.914711        0.395063       -0.011425        0.036559       -0.049984       -0.130982        0.526045       -0.650630               0        0.214097
+A(-1)                       0.179619        0.728291        0.014679       -0.046974        0.136170        0.287311        0.440981        0.835983        0.900000        1.151773
+e_A                         0.199577        0.809213        0.016311       -0.052194        0.151300        0.319234        0.489978        0.928870        1.000000        1.279747
+
+
+THEORETICAL MOMENTS
+
+VARIABLE      MEAN    STD. DEV.   VARIANCE 
+k              0.0000     0.0364     0.0013
+w              0.0000     0.0299     0.0009
+R              0.0000     0.0003     0.0000
+Infl           0.0000     0.0011     0.0000
+X              0.0000     0.0027     0.0000
+L              0.0000     0.0056     0.0000
+c              0.0000     0.0277     0.0008
+rk             0.0000     0.0192     0.0004
+A              0.0000     0.0229     0.0005
+Y              0.0000     0.0349     0.0012
+
+
+
+MATRIX OF CORRELATIONS
+
+Variables      k       w       R     Infl      X       L       c      rk       A       Y   
+k            1.0000  0.9209 -0.4375  0.4375  0.2450  0.0835  0.9759 -0.4375  0.7118  0.8218
+w            0.9209  1.0000 -0.0524  0.0524  0.6035  0.4653  0.9837 -0.0524  0.9293  0.9789
+R           -0.4375 -0.0524  1.0000 -1.0000  0.7646  0.8595 -0.2309  1.0000  0.3201  0.1528
+Infl         0.4375  0.0524 -1.0000  1.0000 -0.7646 -0.8595  0.2309 -1.0000 -0.3201 -0.1528
+X            0.2450  0.6035  0.7646 -0.7646  1.0000  0.9866  0.4506  0.7646  0.8553  0.7538
+L            0.0835  0.4653  0.8595 -0.8595  0.9866  1.0000  0.2988  0.8595  0.7593  0.6364
+c            0.9759  0.9837 -0.2309  0.2309  0.4506  0.2988  1.0000 -0.2309  0.8479  0.9263
+rk          -0.4375 -0.0524  1.0000 -1.0000  0.7646  0.8595 -0.2309  1.0000  0.3201  0.1528
+A            0.7118  0.9293  0.3201 -0.3201  0.8553  0.7593  0.8479  0.3201  1.0000  0.9852
+Y            0.8218  0.9789  0.1528 -0.1528  0.7538  0.6364  0.9263  0.1528  0.9852  1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+
+Order      1       2       3       4       5   
+k        0.9953  0.9830  0.9644  0.9409  0.9136
+w        0.9625  0.9234  0.8833  0.8428  0.8022
+R        0.8598  0.7370  0.6297  0.5359  0.4542
+Infl     0.8598  0.7370  0.6297  0.5359  0.4542
+X        0.8259  0.6755  0.5460  0.4347  0.3393
+L        0.8192  0.6634  0.5294  0.4146  0.3166
+c        0.9833  0.9612  0.9348  0.9051  0.8729
+rk       0.8598  0.7370  0.6297  0.5359  0.4542
+A        0.9000  0.8100  0.7290  0.6561  0.5905
+Y        0.9302  0.8648  0.8036  0.7464  0.6929
+Total computing time : 0h00m23s
+Note: warning(s) encountered in MATLAB/Octave code

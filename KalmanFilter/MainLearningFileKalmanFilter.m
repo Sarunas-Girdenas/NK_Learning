@@ -92,7 +92,7 @@ forecastPeriod = 100; % # of periods to compute forecast for Households and Firm
 
 % initialize input of Kalman Filter
 
-Previous_P = eye(3,3);
+Previous_P = eye(3);
 
 H_vec = [1 SteadyStateValuesNK.k 0];
 
