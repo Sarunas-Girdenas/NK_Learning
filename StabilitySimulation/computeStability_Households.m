@@ -20,7 +20,10 @@ ParameterValues = defineParameters();
 
 numOfVars = 7;
 
-syms eta Lst wst cst Rst alpha Xst rK theta beta Cw Hc Cx Hr Rd rPi rR kst Gk bkk akk akA rho bwk awk awA bmk amk amA bik aik aiA bink aink ainA
+syms eta Lst wst cst Rst alpha Xst rK theta beta Cw Hc Cx Hr Rd rPi rR kst Gk bkk akk akA rho bwk awk awA bmk amk amA bik aik aiA bink aink ainA 
+
+% FIRMS
+syms bkk_F akk_F akA_F bink_F aink_F ainA_F bmk_F amk_F amA_F
 
 B  = sym('B',[3 3]);
 B(:,:) = 0;
@@ -73,7 +76,11 @@ V(6,7) = Rd;
 V(7,6) = 1;
 V(7,7) = -Rst*(1-rR)*rPi;
 
+% HOUSHOLDS
 stabilityCondition = struct('capital',zeros(1,numSimulations),'wage',zeros(1,numSimulations),'interest',zeros(1,numSimulations),'inflation',zeros(1,numSimulations),'markup',zeros(1,numSimulations));
+
+% FIRMS
+stabilityCondition_F = struct('capital',zeros(1,numSimulations),'inflation',zeros(1,numSimulations),'markup',zeros(1,numSimulations));
 
 for j = 1:numSimulations
     
@@ -86,11 +93,18 @@ for j = 1:numSimulations
     
     clear inputFile.oo_
     
+    % households
     B_Capital     = define_B_matrix(bkk,akk,akA,rho);
     B_Wage        = define_B_matrix(bwk,awk,awA,rho);
     B_Markup      = define_B_matrix(bmk,amk,amA,rho);
     B_Interest    = define_B_matrix(bik,aik,aiA,rho);
     B_Inflation   = define_B_matrix(bink,aink,ainA,rho);
+    
+    % firms
+    B_Capital_F   = define_B_matrix(bkk_F,akk_F,akA_F,rho);
+    B_Inflation_F = define_B_matrix(bink_F,aink_F,ainA_F,rho);
+    B_Markup_F    = define_B_matrix(bmk_F,amk_F,amA_F,rho);
+    
     
     % define V matrix
     
@@ -150,6 +164,7 @@ for j = 1:numSimulations
     rho   = ParameterValues.rho;
     Gk    = ParameterValuesLearning.Ck/(1-beta);
     
+    % HOUSEHOLDS
     % capital estimates
     bkk   = SteadyStateValuesNK.k*(1-REmatrix_A(1,1));
     akk   = REmatrix_A(1,1);
@@ -175,18 +190,40 @@ for j = 1:numSimulations
     amk = REmatrix_A(1,5)*SteadyStateValuesNK.X/SteadyStateValuesNK.k;
     amA = SteadyStateValuesNK.X*REmatrix_A(2,5);
     
+    % FIRMS
+    % capital estimates
+    bkk_F = SteadyStateValuesNK.k*(1-REmatrix_A(1,1));
+    akk_F = REmatrix_A(1,1);
+    akA_F = SteadyStateValuesNK.k*REmatrix_A(2,1);     
+    
+    % markup estimates
+    bmk_F = SteadyStateValuesNK.X*(1-REmatrix_A(1,5));
+    amk_F = REmatrix_A(1,5)*SteadyStateValuesNK.X/SteadyStateValuesNK.k;
+    amA_F = SteadyStateValuesNK.X*REmatrix_A(2,5);
+        
+    % inflation estimates
+    bink_F = 1-REmatrix_A(1,4);
+    aink_F = REmatrix_A(1,4)/SteadyStateValuesNK.k;
+    ainA_F = REmatrix_A(2,4);
+    
     % define identity matrix
     Ib = sym('B',[3 3]);
     Ib(:,:) = 0;
     Ib(1,1) = 1;
     Ib(2,2) = 1;
     Ib(3,3) = 1;
-
+    
+    % HOUSEHOLDS
     A_Capital     = Gk * beta * (B_Capital')*((Ib-beta*B_Capital')^(-1));
     A_Inflation   = Gk * beta * (B_Inflation')*((Ib-beta*B_Inflation')^(-1));
     A_Interest    = Gk * beta * (B_Interest')*((Ib-beta*B_Interest')^(-1));
     A_Markup      = Gk * beta * (B_Markup')*((Ib-beta*B_Markup')^(-1));
     A_Wage        = Gk * beta * (B_Wage')*((Ib-beta*B_Wage')^(-1));
+    
+    % FIRMS
+    A_Capital_F   = Gk * beta * (B_Capital_F')*((Ib-beta*B_Capital_F')^(-1));
+    A_Markup_F    = Gk * beta * (B_Markup_F')*((Ib-beta*B_Markup_F')^(-1));
+    A_Inflation_F = Gk * beta * (B_Inflation_F')*((Ib-beta*B_Inflation_F')^(-1));
     
     % evaluate matrices
     Ib          = eval(Ib);
@@ -198,28 +235,44 @@ for j = 1:numSimulations
     
     V           = eval(V);
     xiMatrix    = eval(xiMatrix);
+    
+    % HOUSEHOLDS
     A_Capital   = eval(A_Capital);
     A_Inflation = eval(A_Inflation);
     A_Interest  = eval(A_Interest);
     A_Markup    = eval(A_Markup);
     A_Wage      = eval(A_Wage);
     
+    % FIRMS
+    A_Capital_F   = eval(A_Capital_F);
+    A_Markup_F    = eval(A_Markup_F);
+    A_Inflation_F = eval(A_Inflation_F);
+    
     % finally, compute H matrix
-
+    
+    % HOUSEHOLDS
     H_Capital   = (e'*(inv(V'))*(xiMatrix')*A_Capital - Ib);
     H_Inflation = (e'*(inv(V'))*(xiMatrix')*A_Inflation - Ib);
     H_Interest  = (e'*(inv(V'))*(xiMatrix')*A_Interest - Ib);
     H_Markup    = (e'*(inv(V'))*(xiMatrix')*A_Markup - Ib);
     H_Wage      = (e'*(inv(V'))*(xiMatrix')*A_Wage - Ib);
     
+    % FIRMS
+    F_Capital   = (e'*(inv(V'))*(xiMatrix')*A_Capital_F - Ib);
+    F_Markup    = (e'*(inv(V'))*(xiMatrix')*A_Markup_F - Ib);
+    F_Inflation = (e'*(inv(V'))*(xiMatrix')*A_Inflation_F - Ib);
     
+    % HOUSEHOLDS
     stabilityCondition.capital(1,j)   = checkStability( eig(H_Capital) );
     stabilityCondition.inflation(1,j) = checkStability( eig(H_Inflation) );
     stabilityCondition.interest(1,j)  = checkStability( eig(H_Interest) );
     stabilityCondition.markup(1,j)    = checkStability( eig(H_Markup) );
     stabilityCondition.wage(1,j)      = checkStability( eig(H_Wage) );
     
-    
+    % FIRMS
+    stabilityCondition_F.capital(1,j)   = checkStability( eig(F_Capital) );
+    stabilityCondition_F.markup(1,j)    = checkStability( eig(F_Markup) );
+    stabilityCondition_F.inflation(1,j) = checkStability( eig(F_Inflation) );
     
 end
 

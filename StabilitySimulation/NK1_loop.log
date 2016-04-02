@@ -9,52 +9,10 @@ Computing dynamic model derivatives:
 Processing outputs ...done
 Preprocessing completed.
 Starting MATLAB/Octave computing.
-ynare\4.4.3\matlab\dynare_config.m',188,1)">dynare_config at 188</a>
-  In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\dynare.m',48,1)">dynare at 48</a>] 
-[Warning: Function ilu has the same name as a MATLAB builtin. We
-suggest you rename the function to avoid a potential name
-conflict.] 
-[> In <a href="matlab: opentoline('C:\Program Files\MATLAB\R2014b\toolbox\matlab\general\path.m',109,1)">path at 109</a>
-  In <a href="matlab: opentoline('C:\Program Files\MATLAB\R2014b\toolbox\matlab\general\addpath.m',86,1)">addpath at 86</a>
-  In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\dynare_config.m',188,1)">dynare_config at 188</a>
-  In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\dynare.m',48,1)">dynare at 48</a>] 
-[Warning: Function ordeig has the same name as a MATLAB builtin.
-We suggest you rename the function to avoid a potential name
-conflict.] 
-[> In <a href="matlab: opentoline('C:\Program Files\MATLAB\R2014b\toolbox\matlab\general\path.m',109,1)">path at 109</a>
-  In <a href="matlab: opentoline('C:\Program Files\MATLAB\R2014b\toolbox\matlab\general\addpath.m',86,1)">addpath at 86</a>
-  In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\dynare_config.m',188,1)">dynare_config at 188</a>
-  In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\dynare.m',48,1)">dynare at 48</a>] 
-
-Configuring Dynare ...
-[mex] Generalized QZ.
-[mex] Sylvester equation solution.
-[mex] Kronecker products.
-[mex] Sparse kronecker products.
-[mex] Local state space iteration (second order).
-[mex] Bytecode evaluation.
-[mex] k-order perturbation solver.
-[mex] k-order solution simulation.
-[mex] Quasi Monte-Carlo sequence (Sobol).
-[mex] Markov Switching SBVAR.
-
-Starting Dynare (version 4.4.3).
-Starting preprocessing of the model file ...
-Found 10 equation(s).
-Evaluating expressions...done
-Computing static model derivatives:
- - order 1
-Computing dynamic model derivatives:
- - order 1
-Processing outputs ...done
-Preprocessing completed.
-Starting MATLAB/Octave computing.
-
 [Warning: Some of the parameters have no value (k_st, L_st, c_st,
 w_st, R_st, rk_st, X_st, beta, alpha, delta, theta, epsilon, eta,
-rho) when using stoch_simul. If these parameters are not
-initialized in a steadystate file, Dynare may not be able to
-solve the model...] 
+rho) when using stoch_simul. If these parameters are not initialized
+in a steadystate file, Dynare may not be able to solve the model...] 
 [> In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\test_for_deep_parameters_calibration.m',46,1)">test_for_deep_parameters_calibration at 46</a>
   In <a href="matlab: opentoline('C:\dynare\4.4.3\matlab\stoch_simul.m',27,1)">stoch_simul at 27</a>
   In <a href="matlab: opentoline('\\isad.isadroot.ex.ac.uk\UOE\User\My Documents\NK_Learning\StabilitySimulation\NK1_loop.m',159,1)">NK1_loop at 159</a>
@@ -3972,5 +3930,5 @@ c        0.9833  0.9612  0.9348  0.9051  0.8729
 rk       0.8598  0.7370  0.6297  0.5359  0.4542
 A        0.9000  0.8100  0.7290  0.6561  0.5905
 Y        0.9302  0.8648  0.8036  0.7464  0.6929
-Total computing time : 0h00m23s
+Total computing time : 0h00m20s
 Note: warning(s) encountered in MATLAB/Octave code
